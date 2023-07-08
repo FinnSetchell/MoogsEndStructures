@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:end_cities",
+    "mes:decoration",
+    "mes:hut",
+    "mes:ship",
+    "mes:tower"
+  ]
+}
