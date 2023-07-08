@@ -6,7 +6,7 @@
 
 
 
-![banner](https://www.bisecthosting.com/images/CF/MVS/BH_NU_HEADER.png)
+![banner](https://www.bisecthosting.com/images/CF/MES/BH_NU_HEADER.png)
 
 ---
 
@@ -16,7 +16,7 @@
 
 ---
 
-![Overview](https://www.bisecthosting.com/images/CF/MVS/BH_NU_BANNER1.png)
+![Overview](https://www.bisecthosting.com/images/CF/MES/BH_NU_BANNER1.png)
 
 ---
 
@@ -35,7 +35,7 @@ Moogs Voyager Structures brings life, fun and variety to your Minecraft world! E
 
 **Config pack**
 
-[link](https://www.curseforge.com/minecraft/texture-packs/mvs-moogs-voyager-structure-config-pack)
+[link](https://www.curseforge.com/minecraft/texture-packs/mes-moogs-voyager-structure-config-pack)
 
 A datapack you can use to configure the mod.
 
@@ -47,11 +47,11 @@ A datapack you can use to configure the mod.
 
 ---
 
-![features](https://www.bisecthosting.com/images/CF/MVS/BH_NU_BANNER2.png)![collage](https://imgur.com/I9lNEvl.png)
+![features](https://www.bisecthosting.com/images/CF/MES/BH_NU_BANNER2.png)![collage](https://imgur.com/I9lNEvl.png)
 
 ---
 
-![showcase](https://www.bisecthosting.com/images/CF/MVS/BH_NU_BANNER4.png)
+![showcase](https://www.bisecthosting.com/images/CF/MES/BH_NU_BANNER4.png)
 
 ---
 
@@ -69,7 +69,7 @@ see all modpacks [here](https://www.modpackindex.com/modpack/finder?included_mod
 
 ---
 
-![](https://www.bisecthosting.com/images/CF/MVS/BH_NU_BANNER3.png)
+![](https://www.bisecthosting.com/images/CF/MES/BH_NU_BANNER3.png)
 
 ---
 
@@ -80,4 +80,4 @@ see all modpacks [here](https://www.modpackindex.com/modpack/finder?included_mod
 ---
 
 [![serverImage](https://i.imgur.com/kMtqORw.png)](https://moogsmodded.store.playerlands.com/ "serverShop")  
-[![BHsponser](https://www.bisecthosting.com/images/CF/MVS/BH_NU_PROMO.png)](https://bisecthosting.com/moogsmods)
+[![BHsponser](https://www.bisecthosting.com/images/CF/MES/BH_NU_PROMO.png)](https://bisecthosting.com/moogsmods)
