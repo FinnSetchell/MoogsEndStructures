@@ -1,5 +1,5 @@
 {
-  "name": "mvs:well/wells/start_pool",
+  "name": "mes:hut_start_pool",
 
   "fallback": "minecraft:empty",
 
@@ -9,7 +9,7 @@
       "weight": 1,
       "element": {
 
-        "location": "mvs:shed",
+        "location": "mes:hut",
 
         "processors": "minecraft:empty",
 

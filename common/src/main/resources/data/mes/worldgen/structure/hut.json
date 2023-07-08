@@ -1,15 +1,16 @@
 {
 
-  "type": "mvs:mvs_generic_jigsaw_structure",
+  "type": "mes:mes_generic_jigsaw_structure",
 
-  "start_pool": "mvs:other_decoration/duck/start_pool",
+  "start_pool": "mes:hut_start_pool",
 
   "size": 1,
 
-  "biomes": "#mvs:has_structure/overworld_biomes",
+  "biomes": "#mes:has_structure/end_biomes",
   "project_start_to_heightmap": "WORLD_SURFACE_WG",
   "terrain_height_radius_check": 1,
   "allowed_terrain_height_range": 3,
+  "min_y_allowed": 45,
 
   "step": "surface_structures",
   "terrain_adaptation": "beard_thin",

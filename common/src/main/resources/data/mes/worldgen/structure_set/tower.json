@@ -1,0 +1,18 @@
+{
+  "structures": [
+    {
+      "structure": "mes:tower",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "mes:advanced_random_spread",
+    "salt": 336251487,
+    "spacing": 30,
+    "separation": 15,
+    "super_exclusion_zone": {
+      "chunk_count": 7,
+      "other_set": "#mes:common_avoid"
+    }
+  }
+}
