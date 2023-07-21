@@ -2,7 +2,7 @@
 
   "type": "mes:mes_generic_jigsaw_structure",
 
-  "start_pool": "mes:ship_start_pool",
+  "start_pool": "mes:decoration/ender_spire_start_pool",
 
   "size": 1,
 
@@ -13,9 +13,9 @@
   "min_y_allowed": 45,
 
   "step": "surface_structures",
-  "terrain_adaptation": "none",
+  "terrain_adaptation": "beard_thin",
   "start_height": {
-    "absolute": 64
+    "absolute": 0
   },
 
   "spawn_overrides": {}
