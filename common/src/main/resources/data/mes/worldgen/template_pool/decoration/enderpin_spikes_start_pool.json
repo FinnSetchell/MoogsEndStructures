@@ -5,7 +5,7 @@
     {
       "weight": 1,
       "element": {
-        "location": "mes:decoration/floater_1",
+        "location": "mes:decoration/enderpin_spikes/enderpin_spikes_1",
         "processors": "minecraft:empty",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
@@ -14,7 +14,7 @@
     {
       "weight": 1,
       "element": {
-        "location": "mes:decoration/floater_2",
+        "location": "mes:decoration/enderpin_spikes/enderpin_spikes_2",
         "processors": "minecraft:empty",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
