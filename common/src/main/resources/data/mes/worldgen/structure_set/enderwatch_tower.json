@@ -9,7 +9,7 @@
     "type": "mes:advanced_random_spread",
     "salt": 336251487,
     "spacing": 30,
-    "separation": 15,
+    "separation": 12,
     "super_exclusion_zone": {
       "chunk_count": 5,
       "other_set": "#mes:common_avoid"
