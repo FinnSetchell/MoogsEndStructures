@@ -8,8 +8,8 @@
   "placement": {
     "type": "mes:advanced_random_spread",
     "salt": 132545874,
-    "spacing": 30,
-    "separation": 15,
+    "spacing": 35,
+    "separation": 20,
     "super_exclusion_zone": {
       "chunk_count": 7,
       "other_set": "#mes:common_avoid"
