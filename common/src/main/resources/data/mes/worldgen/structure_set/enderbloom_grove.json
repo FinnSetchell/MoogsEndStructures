@@ -11,7 +11,7 @@
     "spacing": 30,
     "separation": 15,
     "super_exclusion_zone": {
-      "chunk_count": 3,
+      "chunk_count": 4,
       "other_set": "#mes:common_avoid"
     }
   }
