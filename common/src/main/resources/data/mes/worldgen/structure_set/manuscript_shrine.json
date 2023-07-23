@@ -1,0 +1,18 @@
+{
+  "structures": [
+    {
+      "structure": "mes:manuscript_shrine",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "mes:advanced_random_spread",
+    "salt": 369858747,
+    "spacing": 25,
+    "separation": 15,
+    "super_exclusion_zone": {
+      "chunk_count": 2,
+      "other_set": "#mes:common_avoid"
+    }
+  }
+}
