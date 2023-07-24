@@ -12,7 +12,7 @@
     "separation": 12,
     "super_exclusion_zone": {
       "chunk_count": 5,
-      "other_set": "#mes:common_avoid"
+      "other_set": "#mes:enderwatch_tower_avoid"
     }
   }
 }

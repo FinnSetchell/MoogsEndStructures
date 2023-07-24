@@ -12,7 +12,7 @@
     "separation": 20,
     "super_exclusion_zone": {
       "chunk_count": 6,
-      "other_set": "#mes:common_avoid"
+      "other_set": "#mes:starlight_voyager_avoid"
     }
   }
 }

@@ -2,25 +2,15 @@
   "replace": false,
   "values": [
     "minecraft:end_cities",
-    "mes:astral_hideaway",
+    "mes:astral_meteorite",
     "mes:enderbloom_grove",
     "mes:enderkeep_courtyard",
-    "mes:enderskog",
     "mes:enderwatch_tower",
+    "mes:manuscript_shrine",
+    "mes:monolith",
     "mes:mythic_garden",
     "mes:phantom_citadel",
-    "mes:starlight_voyager",
-    "mes:tower",
-
     "mes:placid_prairie",
-    "mes:monolith",
-
-    "mes:decoration",
-    "mes:astral_meteorite",
-    "mes:ender_spire",
-
-    "mes:enderpin_spikes",
-    "mes:endscraps",
-    "mes:ruined_pillar"
+    "mes:starlight_voyager"
   ]
 }
