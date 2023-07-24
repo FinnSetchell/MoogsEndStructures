@@ -40,7 +40,6 @@ import net.minecraft.world.level.levelgen.RandomState;
 import net.minecraft.world.level.levelgen.structure.BoundingBox;
 import net.minecraft.world.level.levelgen.structure.StructurePiece;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplate;
-import net.minecraft.world.level.storage.loot.LootDataType;
 import net.minecraft.world.level.storage.loot.LootTable;
 
 import java.io.BufferedReader;
@@ -104,7 +103,7 @@ public final class GeneralUtils {
 
                 // Exit early if facing open space opposite of wall
                 mutable.move(facing.getOpposite(), 2);
-                if(!blockView.getBlockState(mutable).isSolid()) {
+                if(blockView.getBlockState(mutable).getMaterial().isSolid()) {
                     break;
                 }
             }
@@ -197,7 +196,7 @@ public final class GeneralUtils {
     }
 
     private static boolean isReplaceableByStructures(BlockState blockState) {
-        return blockState.isAir() || !blockState.getFluidState().isEmpty() || blockState.is(BlockTags.REPLACEABLE_BY_TREES);
+        return blockState.isAir() || !blockState.getMaterial().isLiquid() || blockState.getMaterial().isReplaceable();
     }
 
     //////////////////////////////////////////////
@@ -218,9 +217,9 @@ public final class GeneralUtils {
 
     // More optimized with checking if the jigsaw blocks can connect
     public static boolean canJigsawsAttach(StructureTemplate.StructureBlockInfo jigsaw1, StructureTemplate.StructureBlockInfo jigsaw2) {
-        FrontAndTop prop1 = jigsaw1.state().getValue(JigsawBlock.ORIENTATION);
-        FrontAndTop prop2 = jigsaw2.state().getValue(JigsawBlock.ORIENTATION);
-        String joint = jigsaw1.nbt().getString("joint");
+        FrontAndTop prop1 = jigsaw1.state.getValue(JigsawBlock.ORIENTATION);
+        FrontAndTop prop2 = jigsaw2.state.getValue(JigsawBlock.ORIENTATION);
+        String joint = jigsaw1.nbt.getString("joint");
         if(joint.isEmpty()) {
             joint = prop1.front().getAxis().isHorizontal() ? "aligned" : "rollable";
         }
@@ -228,7 +227,7 @@ public final class GeneralUtils {
         boolean isRollable = joint.equals("rollable");
         return prop1.front() == prop2.front().getOpposite() &&
                 (isRollable || prop1.top() == prop2.top()) &&
-                jigsaw1.nbt().getString("target").equals(jigsaw2.nbt().getString("name"));
+                jigsaw1.nbt.getString("target").equals(jigsaw2.nbt.getString("name"));
     }
 
     //////////////////////////////////////////////
@@ -319,11 +318,11 @@ public final class GeneralUtils {
 
     public static boolean isInvalidLootTableFound(MinecraftServer minecraftServer, Map.Entry<ResourceLocation, ResourceLocation> entry) {
         boolean invalidLootTableFound = false;
-        if(minecraftServer.getLootData().getLootTable(entry.getKey()) == LootTable.EMPTY) {
+        if(minecraftServer.getLootTables().get(entry.getKey()) == LootTable.EMPTY) {
             MESCommon.LOGGER.error("Unable to find loot table key: {}", entry.getKey());
             invalidLootTableFound = true;
         }
-        if(minecraftServer.getLootData().getLootTable(entry.getValue()) == LootTable.EMPTY) {
+        if(minecraftServer.getLootTables().get(entry.getValue()) == LootTable.EMPTY) {
             MESCommon.LOGGER.error("Unable to find loot table value: {}", entry.getValue());
             invalidLootTableFound = true;
         }
@@ -332,7 +331,7 @@ public final class GeneralUtils {
 
     public static boolean isMissingLootImporting(MinecraftServer minecraftServer, Set<ResourceLocation> tableKeys) {
         AtomicBoolean invalidLootTableFound = new AtomicBoolean(false);
-        minecraftServer.getLootData().getKeys(LootDataType.TABLE).forEach(rl -> {
+        minecraftServer.getLootTables().getIds().forEach(rl -> {
             if(rl.getNamespace().equals(MESCommon.MODID) && !tableKeys.contains(rl)) {
                 if(rl.getPath().contains("mansions") && rl.getPath().contains("storage")) {
                     return;

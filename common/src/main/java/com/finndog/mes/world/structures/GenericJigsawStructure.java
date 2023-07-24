@@ -126,7 +126,7 @@ public class GenericJigsawStructure extends Structure {
     protected boolean extraSpawningChecks(GenerationContext context, BlockPos blockPos) {
         ChunkPos chunkPos = context.chunkPos();
 
-        if (chunkPos.x < 1000 || chunkPos.z < 1000) {
+        if (chunkPos.x < 60 || chunkPos.z < 60) {
             return false;
         }
 
