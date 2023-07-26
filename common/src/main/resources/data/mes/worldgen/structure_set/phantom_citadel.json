@@ -12,7 +12,7 @@
     "separation": 20,
     "super_exclusion_zone": {
       "chunk_count": 7,
-      "other_set": "#mes:phantom_citadel_avoid"
+      "other_set": "#mes:common_avoid"
     }
   }
 }
