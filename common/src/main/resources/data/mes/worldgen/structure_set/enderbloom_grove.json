@@ -10,9 +10,6 @@
     "salt": 965235487,
     "spacing": 26,
     "separation": 15,
-    "super_exclusion_zone": {
-      "chunk_count": 4,
-      "other_set": "#mes:enderbloom_grove_avoid"
-    }
+    "min_distance_from_world_origin": 1000
   }
 }

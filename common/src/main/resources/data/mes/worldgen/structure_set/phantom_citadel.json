@@ -10,9 +10,6 @@
     "salt": 132545874,
     "spacing": 38,
     "separation": 20,
-    "super_exclusion_zone": {
-      "chunk_count": 7,
-      "other_set": "#mes:phantom_citadel_avoid"
-    }
+    "min_distance_from_world_origin": 1000
   }
 }

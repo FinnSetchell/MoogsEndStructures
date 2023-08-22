@@ -10,9 +10,6 @@
     "salt": 136568741,
     "spacing": 23,
     "separation": 15,
-    "super_exclusion_zone": {
-      "chunk_count": 2,
-      "other_set": "#mes:astral_hideaway_avoid"
-    }
+    "min_distance_from_world_origin": 1000
   }
 }
