@@ -10,10 +10,6 @@
     "salt": 985412145,
     "spacing": 25,
     "separation": 15,
-    "super_exclusion_zone": {
-      "chunk_count": 3,
-      "other_set": "#mes:common_avoid"
-    },
     "min_distance_from_world_origin": 1000
   }
 }
