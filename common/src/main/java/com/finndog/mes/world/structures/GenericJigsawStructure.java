@@ -126,10 +126,6 @@ public class GenericJigsawStructure extends Structure {
     protected boolean extraSpawningChecks(GenerationContext context, BlockPos blockPos) {
         ChunkPos chunkPos = context.chunkPos();
 
-        if (chunkPos.x < 1000 || chunkPos.z < 1000) {
-            return false;
-        }
-
         if (this.biomeRadius.isPresent() && !(context.biomeSource() instanceof CheckerboardColumnBiomeSource)) {
             int validBiomeRange = this.biomeRadius.get();
             int sectionY = blockPos.getY();
