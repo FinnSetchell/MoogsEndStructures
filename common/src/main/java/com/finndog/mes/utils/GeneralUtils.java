@@ -1,8 +1,6 @@
 package com.finndog.mes.utils;
 
 import com.finndog.mes.MESCommon;
-import com.finndog.mes.mixins.resources.NamespaceResourceManagerAccessor;
-import com.finndog.mes.mixins.resources.ReloadableResourceManagerImplAccessor;
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParseException;
@@ -11,20 +9,12 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.FrontAndTop;
 import net.minecraft.core.Vec3i;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.MinecraftServer;
-import net.minecraft.server.packs.PackResources;
-import net.minecraft.server.packs.PackType;
-import net.minecraft.server.packs.resources.FallbackResourceManager;
-import net.minecraft.server.packs.resources.IoSupplier;
+import net.minecraft.server.packs.resources.Resource;
 import net.minecraft.server.packs.resources.ResourceManager;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.util.GsonHelper;
-import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.LevelHeightAccessor;
 import net.minecraft.world.level.LevelReader;
@@ -114,21 +104,6 @@ public final class GeneralUtils {
     }
 
     //////////////////////////////////////////////
-
-    public static ItemStack enchantRandomly(RandomSource random, ItemStack itemToEnchant, float chance) {
-        if(random.nextFloat() < chance) {
-            List<Enchantment> list = BuiltInRegistries.ENCHANTMENT.stream().filter(Enchantment::isDiscoverable)
-                    .filter((enchantmentToCheck) -> enchantmentToCheck.canEnchant(itemToEnchant)).toList();
-            if(!list.isEmpty()) {
-                Enchantment enchantment = list.get(random.nextInt(list.size()));
-                // bias towards weaker enchantments
-                int enchantmentLevel = random.nextInt(Mth.nextInt(random, enchantment.getMinLevel(), enchantment.getMaxLevel()) + 1);
-                itemToEnchant.enchant(enchantment, enchantmentLevel);
-            }
-        }
-
-        return itemToEnchant;
-    }
 
     //////////////////////////////////////////////
 
@@ -233,33 +208,6 @@ public final class GeneralUtils {
     //////////////////////////////////////////////
 
     /**
-     * Obtains all of the file streams for all files found in all datapacks with the given id.
-     *
-     * @return - Filestream list of all files found with id
-     */
-    public static List<InputStream> getAllFileStreams(ResourceManager resourceManager, ResourceLocation fileID) throws IOException {
-        List<InputStream> fileStreams = new ArrayList<>();
-
-        FallbackResourceManager namespaceResourceManager = ((ReloadableResourceManagerImplAccessor) resourceManager).mes_getNamespacedManagers().get(fileID.getNamespace());
-        List<FallbackResourceManager.PackEntry> allResourcePacks = ((NamespaceResourceManagerAccessor) namespaceResourceManager).mes_getFallbacks();
-
-        // Find the file with the given id and add its filestream to the list
-        for (FallbackResourceManager.PackEntry packEntry : allResourcePacks) {
-            PackResources resourcePack = packEntry.resources();
-            if (resourcePack != null) {
-                IoSupplier<InputStream> IoSupplier = resourcePack.getResource(PackType.SERVER_DATA, fileID);
-                if (IoSupplier != null) {
-                    InputStream inputStream = IoSupplier.get();
-                    fileStreams.add(inputStream);
-                }
-            }
-        }
-
-        // Return filestream of all files matching id path
-        return fileStreams;
-    }
-
-    /**
      * Will grab all JSON objects from all datapacks's folder that is specified by the dataType parameter.
      *
      * @return - A map of paths (identifiers) to a list of all JSON elements found under it from all datapacks.
@@ -269,15 +217,16 @@ public final class GeneralUtils {
         int dataTypeLength = dataType.length() + 1;
 
         // Finds all JSON files paths within the pool_additions folder. NOTE: this is just the path rn. Not the actual files yet.
-        for (ResourceLocation fileIDWithExtension : resourceManager.listResources(dataType, (fileString) -> fileString.toString().endsWith(".json")).keySet()) {
-            String identifierPath = fileIDWithExtension.getPath();
+        for (Map.Entry<ResourceLocation, List<Resource>> resourceStackEntry : resourceManager.listResourceStacks(dataType, (fileString) -> fileString.toString().endsWith(".json")).entrySet()) {
+            String identifierPath = resourceStackEntry.getKey().getPath();
             ResourceLocation fileID = new ResourceLocation(
-                    fileIDWithExtension.getNamespace(),
+                    resourceStackEntry.getKey().getNamespace(),
                     identifierPath.substring(dataTypeLength, identifierPath.length() - fileSuffixLength));
 
             try {
                 // getAllFileStreams will find files with the given ID. This part is what will loop over all matching files from all datapacks.
-                for (InputStream fileStream : GeneralUtils.getAllFileStreams(resourceManager, fileIDWithExtension)) {
+                for (Resource resource : resourceStackEntry.getValue()) {
+                    InputStream fileStream = resource.open();
                     try (Reader bufferedReader = new BufferedReader(new InputStreamReader(fileStream, StandardCharsets.UTF_8))) {
 
                         // Get the JSON from the file
@@ -296,7 +245,7 @@ public final class GeneralUtils {
                                     "(Moog's End Structures {} MERGER) Couldn't load data file {} from {} as it's null or empty",
                                     dataType,
                                     fileID,
-                                    fileIDWithExtension);
+                                    resourceStackEntry);
                         }
                     }
                 }
@@ -306,7 +255,7 @@ public final class GeneralUtils {
                         "(Moog's End Structures {} MERGER) Couldn't parse data file {} from {}",
                         dataType,
                         fileID,
-                        fileIDWithExtension,
+                        resourceStackEntry,
                         exception);
             }
         }
