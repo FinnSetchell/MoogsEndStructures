@@ -4,7 +4,6 @@ import com.finndog.mes.events.lifecycle.RegisterReloadListenerEvent;
 import com.finndog.mes.events.lifecycle.ServerGoingToStartEvent;
 import com.finndog.mes.events.lifecycle.ServerGoingToStopEvent;
 import com.finndog.mes.events.lifecycle.SetupEvent;
-import com.finndog.mes.misc.pooladditions.PoolAdditionMerger;
 import com.finndog.mes.modinit.MESPlacements;
 import com.finndog.mes.modinit.MESProcessors;
 import com.finndog.mes.modinit.MESStructurePieces;
@@ -40,7 +39,6 @@ public class MESCommon {
     }
 
     private static void serverAboutToStart(final ServerGoingToStartEvent event) {
-        PoolAdditionMerger.mergeAdditionPools(event);
 
         AsyncLocator.handleServerAboutToStartEvent();
     }
