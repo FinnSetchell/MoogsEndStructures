@@ -1,0 +1,31 @@
+modLoader="javafml"
+loaderVersion="[2,)"
+issueTrackerURL="https://github.com/FinnSetchell/MoogsEndStructures/issues" #optional
+license="https://github.com/FinnSetchell/MoogsEndStructures/blob/1.20-MultiLoader/LICENSE"
+
+[[mods]]
+    modId="mes"
+    logoFile= "assets/mes/icon.png"
+    logoBlur=false
+    version="${version}"
+    displayName="Moog's End Structures"
+    displayURL="https://www.curseforge.com/minecraft/mc-mods/moogs-end-structures"
+    authors="FinnDog"
+    credits="Thanks to everyone who has contributed builds as well as TelepathicGrunt for their structure mod template and rs"
+    description='''
+    Moogs End Structures brings life, fun and variety to your Minecraft world!
+    Explore awesome new structures made with vanilla blocks and entities, and discover loot,
+    enemies, and more along the way. This mod is compatible with any modpack and keeps
+    the vanilla feel of the game!
+    '''
+
+[[mixins]]
+    config = "mes-neoforge.mixins.json"
+
+[[mixins]]
+    config = "mes-common.mixins.json"
+
+[[dependencies.mes]]
+    modId="minecraft"
+    type="required"
+    versionRange="[1.20.5,)"
