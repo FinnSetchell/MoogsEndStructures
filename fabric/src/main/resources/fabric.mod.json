@@ -3,7 +3,7 @@
     "id": "mes",
     "version": "${version}-fabric",
     "name": "Moog's End Structures",
-    "description": "80+ structures made with vanilla blocks and entities bringing life to your world! Discover loot, enemies, & villagers along the way!",
+    "description": "Moogs End Structures brings life, fun and variety to your Minecraft world! Explore awesome new structures made with vanilla blocks and entities, and discover loot, enemies, and more along the way. This mod is compatible with any modpack and keeps the vanilla feel of the game!",
     "authors": [
         "FinnDog"
     ],
@@ -24,10 +24,9 @@
         "mes-common.mixins.json"
     ],
     "depends": {
-        "fabricloader": ">=0.14",
-        "fabric": ">=0.83.0",
-        "minecraft": ">=1.20",
-        "java": ">=17"
+        "fabricloader": "*",
+        "minecraft": ">=1.21",
+        "fabric": "*"
     },
     "suggests": {
         "another-mod": "*"

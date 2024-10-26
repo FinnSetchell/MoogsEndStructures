@@ -1,18 +1,21 @@
 package com.finndog.mes.utils;
 
 import com.finndog.mes.MESCommon;
+import com.finndog.mes.mixins.resources.NamespaceResourceManagerAccessor;
+import com.finndog.mes.mixins.resources.ReloadableResourceManagerImplAccessor;
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParseException;
 import com.mojang.datafixers.util.Pair;
-import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
-import net.minecraft.core.FrontAndTop;
-import net.minecraft.core.Vec3i;
+import net.minecraft.core.*;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.MinecraftServer;
-import net.minecraft.server.packs.resources.Resource;
+import net.minecraft.server.packs.PackResources;
+import net.minecraft.server.packs.PackType;
+import net.minecraft.server.packs.resources.FallbackResourceManager;
+import net.minecraft.server.packs.resources.IoSupplier;
 import net.minecraft.server.packs.resources.ResourceManager;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.GsonHelper;
@@ -111,14 +114,14 @@ public final class GeneralUtils {
 
     //////////////////////////////////////////////
 
-    public static ItemStack enchantRandomly(RandomSource random, ItemStack itemToEnchant, float chance) {
+    public static ItemStack enchantRandomly(RegistryAccess registryAccess, RandomSource random, ItemStack itemToEnchant, float chance) {
         if(random.nextFloat() < chance) {
-            List<Enchantment> list = BuiltInRegistries.ENCHANTMENT.stream().filter(Enchantment::isDiscoverable)
-                    .filter((enchantmentToCheck) -> enchantmentToCheck.canEnchant(itemToEnchant)).toList();
+            List<Holder.Reference<Enchantment>> list = registryAccess.registryOrThrow(Registries.ENCHANTMENT).holders()
+                    .filter(holder -> holder.value().canEnchant(itemToEnchant)).toList();
             if(!list.isEmpty()) {
-                Enchantment enchantment = list.get(random.nextInt(list.size()));
+                Holder.Reference<Enchantment> enchantment = list.get(random.nextInt(list.size()));
                 // bias towards weaker enchantments
-                int enchantmentLevel = random.nextInt(Mth.nextInt(random, enchantment.getMinLevel(), enchantment.getMaxLevel()) + 1);
+                int enchantmentLevel = random.nextInt(Mth.nextInt(random, enchantment.value().getMinLevel(), enchantment.value().getMaxLevel()) + 1);
                 itemToEnchant.enchant(enchantment, enchantmentLevel);
             }
         }
@@ -229,6 +232,33 @@ public final class GeneralUtils {
     //////////////////////////////////////////////
 
     /**
+     * Obtains all of the file streams for all files found in all datapacks with the given id.
+     *
+     * @return - Filestream list of all files found with id
+     */
+    public static List<InputStream> getAllFileStreams(ResourceManager resourceManager, ResourceLocation fileID) throws IOException {
+        List<InputStream> fileStreams = new ArrayList<>();
+
+        FallbackResourceManager namespaceResourceManager = ((ReloadableResourceManagerImplAccessor) resourceManager).mes_getNamespacedManagers().get(fileID.getNamespace());
+        List<FallbackResourceManager.PackEntry> allResourcePacks = ((NamespaceResourceManagerAccessor) namespaceResourceManager).mes_getFallbacks();
+
+        // Find the file with the given id and add its filestream to the list
+        for (FallbackResourceManager.PackEntry packEntry : allResourcePacks) {
+            PackResources resourcePack = packEntry.resources();
+            if (resourcePack != null) {
+                IoSupplier<InputStream> IoSupplier = resourcePack.getResource(PackType.SERVER_DATA, fileID);
+                if (IoSupplier != null) {
+                    InputStream inputStream = IoSupplier.get();
+                    fileStreams.add(inputStream);
+                }
+            }
+        }
+
+        // Return filestream of all files matching id path
+        return fileStreams;
+    }
+
+    /**
      * Will grab all JSON objects from all datapacks's folder that is specified by the dataType parameter.
      *
      * @return - A map of paths (identifiers) to a list of all JSON elements found under it from all datapacks.
@@ -238,16 +268,15 @@ public final class GeneralUtils {
         int dataTypeLength = dataType.length() + 1;
 
         // Finds all JSON files paths within the pool_additions folder. NOTE: this is just the path rn. Not the actual files yet.
-        for (Map.Entry<ResourceLocation, List<Resource>> resourceStackEntry : resourceManager.listResourceStacks(dataType, (fileString) -> fileString.toString().endsWith(".json")).entrySet()) {
-            String identifierPath = resourceStackEntry.getKey().getPath();
-            ResourceLocation fileID = new ResourceLocation(
-                    resourceStackEntry.getKey().getNamespace(),
+        for (ResourceLocation fileIDWithExtension : resourceManager.listResources(dataType, (fileString) -> fileString.toString().endsWith(".json")).keySet()) {
+            String identifierPath = fileIDWithExtension.getPath();
+            ResourceLocation fileID = ResourceLocation.fromNamespaceAndPath(
+                    fileIDWithExtension.getNamespace(),
                     identifierPath.substring(dataTypeLength, identifierPath.length() - fileSuffixLength));
 
             try {
                 // getAllFileStreams will find files with the given ID. This part is what will loop over all matching files from all datapacks.
-                for (Resource resource : resourceStackEntry.getValue()) {
-                    InputStream fileStream = resource.open();
+                for (InputStream fileStream : GeneralUtils.getAllFileStreams(resourceManager, fileIDWithExtension)) {
                     try (Reader bufferedReader = new BufferedReader(new InputStreamReader(fileStream, StandardCharsets.UTF_8))) {
 
                         // Get the JSON from the file
@@ -266,7 +295,7 @@ public final class GeneralUtils {
                                     "(Moog's End Structures {} MERGER) Couldn't load data file {} from {} as it's null or empty",
                                     dataType,
                                     fileID,
-                                    resourceStackEntry);
+                                    fileIDWithExtension);
                         }
                     }
                 }
@@ -276,57 +305,11 @@ public final class GeneralUtils {
                         "(Moog's End Structures {} MERGER) Couldn't parse data file {} from {}",
                         dataType,
                         fileID,
-                        resourceStackEntry,
+                        fileIDWithExtension,
                         exception);
             }
         }
 
         return map;
-    }
-
-    ////////////////////////////
-
-    public static boolean isInvalidLootTableFound(MinecraftServer minecraftServer, Map.Entry<ResourceLocation, ResourceLocation> entry) {
-        boolean invalidLootTableFound = false;
-        if(minecraftServer.getLootData().getLootTable(entry.getKey()) == LootTable.EMPTY) {
-            MESCommon.LOGGER.error("Unable to find loot table key: {}", entry.getKey());
-            invalidLootTableFound = true;
-        }
-        if(minecraftServer.getLootData().getLootTable(entry.getValue()) == LootTable.EMPTY) {
-            MESCommon.LOGGER.error("Unable to find loot table value: {}", entry.getValue());
-            invalidLootTableFound = true;
-        }
-        return invalidLootTableFound;
-    }
-
-    public static boolean isMissingLootImporting(MinecraftServer minecraftServer, Set<ResourceLocation> tableKeys) {
-        AtomicBoolean invalidLootTableFound = new AtomicBoolean(false);
-        minecraftServer.getLootData().getKeys(LootDataType.TABLE).forEach(rl -> {
-            if(rl.getNamespace().equals(MESCommon.MODID) && !tableKeys.contains(rl)) {
-                if(rl.getPath().contains("mansions") && rl.getPath().contains("storage")) {
-                    return;
-                }
-
-                if(rl.getPath().contains("monuments")) {
-                    return;
-                }
-
-                if(rl.getPath().contains("dispensers/temples/wasteland_lava")) {
-                    return;
-                }
-
-                if(rl.getPath().contains("lucky_pool")) {
-                    return;
-                }
-
-                if(rl.getPath().contains("archaeology")) {
-                    return;
-                }
-
-                MESCommon.LOGGER.error("No loot importing found for: {}", rl);
-                invalidLootTableFound.set(true);
-            }
-        });
-        return invalidLootTableFound.get();
     }
 }
