@@ -77,7 +77,6 @@
             "functions": [
               {
                 "function": "minecraft:enchant_with_levels",
-                "options": "#minecraft:on_random_loot",
                 "levels": 25
               }
             ]
