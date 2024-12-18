@@ -17,8 +17,7 @@ public class StructureNbtUpdaterDatagen {
         DataGenerator gen = event.getGenerator();
         final var output = gen.getPackOutput();
 
-        if (event.includeServer()) {
-            gen.addProvider(true, new StructureNbtUpdater("structures", MESCommon.MODID, exHelper, output));
-        }
+        gen.addProvider(true, new StructureNbtUpdater("structures", MESCommon.MODID, exHelper, output));
+
     }
 }

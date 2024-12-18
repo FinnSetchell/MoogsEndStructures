@@ -1,6 +1,8 @@
 package com.finndog.mes.modinit.registry.neoforge;
 
 import com.finndog.mes.modinit.registry.CustomRegistryLookup;
+import java.util.Optional;
+import net.minecraft.core.Holder.Reference;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
 import org.jetbrains.annotations.NotNull;
@@ -25,7 +27,13 @@ public class NeoForgeCustomRegistry<T, K extends T> implements CustomRegistryLoo
 
     @Override
     public @Nullable T get(ResourceLocation id) {
-        return registry.get(id);
+        Optional<Reference<T>> reference = registry.get(id);
+        if (reference.isPresent()) {
+            return reference.get().value();
+        }
+        else {
+            return null;
+        }
     }
 
     @Override

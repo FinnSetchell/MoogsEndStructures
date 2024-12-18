@@ -6,9 +6,11 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;
 import com.google.gson.reflect.TypeToken;
 import net.minecraft.MethodsReturnNonnullByDefault;
+import net.minecraft.resources.FileToIdConverter;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.ResourceManager;
 import net.minecraft.server.packs.resources.SimpleJsonResourceReloadListener;
+import net.minecraft.util.ExtraCodecs;
 import net.minecraft.util.profiling.ProfilerFiller;
 import org.jetbrains.annotations.Nullable;
 
@@ -17,7 +19,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class StructurePieceCountsManager extends SimpleJsonResourceReloadListener {
+public class StructurePieceCountsManager extends SimpleJsonResourceReloadListener<JsonElement> {
     private static final Gson GSON = (new GsonBuilder()).setPrettyPrinting().setLenient().disableHtmlEscaping().excludeFieldsWithoutExposeAnnotation().create();
     public final static StructurePieceCountsManager STRUCTURE_PIECE_COUNTS_MANAGER = new StructurePieceCountsManager();
 
@@ -26,7 +28,7 @@ public class StructurePieceCountsManager extends SimpleJsonResourceReloadListene
     private final Map<ResourceLocation, Map<ResourceLocation, Integer>> cachedMaxCountPiecesMap = new HashMap<>();
 
     public StructurePieceCountsManager() {
-        super(GSON, "rs_pieces_spawn_counts");
+        super(ExtraCodecs.JSON, FileToIdConverter.json("rs_pieces_spawn_counts"));
     }
 
     @MethodsReturnNonnullByDefault
