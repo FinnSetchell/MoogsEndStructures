@@ -58,77 +58,6 @@ import java.util.concurrent.atomic.AtomicBoolean;
 public final class GeneralUtils {
     private GeneralUtils() {}
 
-    // Weighted Random from: https://stackoverflow.com/a/6737362
-    public static <T> T getRandomEntry(List<Pair<T, Integer>> rlList, RandomSource random) {
-        double totalWeight = 0.0;
-
-        // Compute the total weight of all items together.
-        for (Pair<T, Integer> pair : rlList) {
-            totalWeight += pair.getSecond();
-        }
-
-        // Now choose a random item.
-        int index = 0;
-        for (double randomWeightPicked = random.nextFloat() * totalWeight; index < rlList.size() - 1; ++index) {
-            randomWeightPicked -= rlList.get(index).getSecond();
-            if (randomWeightPicked <= 0.0) break;
-        }
-
-        return rlList.get(index).getFirst();
-    }
-
-    //////////////////////////////
-
-    private static final Map<BlockState, Boolean> IS_FULLCUBE_MAP = new ConcurrentHashMap<>();
-
-    public static boolean isFullCube(BlockGetter world, BlockPos pos, BlockState state) {
-        if(state == null) return false;
-        return IS_FULLCUBE_MAP.computeIfAbsent(state, (stateIn) -> Block.isShapeFullBlock(stateIn.getOcclusionShape(world, pos)));
-    }
-
-    //////////////////////////////
-
-    // Helper method to make chests always face away from walls
-    public static BlockState orientateChest(ServerLevelAccessor blockView, BlockPos blockPos, BlockState blockState) {
-        BlockPos.MutableBlockPos mutable = new BlockPos.MutableBlockPos();
-        Direction wallDirection = blockState.getValue(HorizontalDirectionalBlock.FACING);
-
-        for(Direction facing : Direction.Plane.HORIZONTAL) {
-            mutable.set(blockPos).move(facing);
-
-            // Checks if wall is in this side
-            if (isFullCube(blockView, mutable, blockView.getBlockState(mutable))) {
-                wallDirection = facing;
-
-                // Exit early if facing open space opposite of wall
-                mutable.move(facing.getOpposite(), 2);
-                if(!blockView.getBlockState(mutable).isSolid()) {
-                    break;
-                }
-            }
-        }
-
-        // Make chest face away from wall
-        return blockState.setValue(HorizontalDirectionalBlock.FACING, wallDirection.getOpposite());
-    }
-
-    //////////////////////////////////////////////
-
-    public static ItemStack enchantRandomly(RegistryAccess registryAccess, RandomSource random, ItemStack itemToEnchant, float chance) {
-        if(random.nextFloat() < chance) {
-            List<Holder.Reference<Enchantment>> list = registryAccess.registryOrThrow(Registries.ENCHANTMENT).holders()
-                    .filter(holder -> holder.value().canEnchant(itemToEnchant)).toList();
-            if(!list.isEmpty()) {
-                Holder.Reference<Enchantment> enchantment = list.get(random.nextInt(list.size()));
-                // bias towards weaker enchantments
-                int enchantmentLevel = random.nextInt(Mth.nextInt(random, enchantment.value().getMinLevel(), enchantment.value().getMaxLevel()) + 1);
-                itemToEnchant.enchant(enchantment, enchantmentLevel);
-            }
-        }
-
-        return itemToEnchant;
-    }
-
     //////////////////////////////////////////////
 
     public static int getMaxTerrainLimit(ChunkGenerator chunkGenerator) {
@@ -180,23 +109,8 @@ public final class GeneralUtils {
 
     //////////////////////////////////////////////
 
-    public static int getFirstLandYFromPos(LevelReader worldView, BlockPos pos) {
-        BlockPos.MutableBlockPos mutable = new BlockPos.MutableBlockPos();
-        mutable.set(pos);
-        ChunkAccess currentChunk = worldView.getChunk(mutable);
-        BlockState currentState = currentChunk.getBlockState(mutable);
 
-        while(mutable.getY() >= worldView.getMinBuildHeight() && isReplaceableByStructures(currentState)) {
-            mutable.move(Direction.DOWN);
-            currentState = currentChunk.getBlockState(mutable);
-        }
 
-        return mutable.getY();
-    }
-
-    private static boolean isReplaceableByStructures(BlockState blockState) {
-        return blockState.isAir() || !blockState.getFluidState().isEmpty() || blockState.is(BlockTags.REPLACEABLE_BY_TREES);
-    }
 
     //////////////////////////////////////////////
 
