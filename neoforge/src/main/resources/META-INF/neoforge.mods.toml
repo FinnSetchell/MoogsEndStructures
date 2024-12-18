@@ -28,4 +28,4 @@ license="https://github.com/FinnSetchell/MoogsEndStructures/blob/1.21/LICENSE"
 [[dependencies.mes]]
     modId="minecraft"
     type="required"
-    versionRange="[1.21,)"
+    versionRange="[1.21.4,)"
