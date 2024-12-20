@@ -60,9 +60,9 @@ public class MirroringSingleJigsawPiece extends SinglePoolElement {
     }
 
     @Override
-    public List<StructureTemplate.StructureBlockInfo> getShuffledJigsawBlocks(StructureTemplateManager templateManager, BlockPos blockPos, Rotation rotation, RandomSource random) {
+    public List<StructureTemplate.JigsawBlockInfo> getShuffledJigsawBlocks(StructureTemplateManager templateManager, BlockPos blockPos, Rotation rotation, RandomSource random) {
         StructureTemplate template = this.getTemplate(templateManager);
-        ObjectArrayList<StructureTemplate.StructureBlockInfo> list = template.filterBlocks(blockPos, (new StructurePlaceSettings()).setRotation(rotation).setMirror(mirror), Blocks.JIGSAW, true);
+        List<StructureTemplate.JigsawBlockInfo> list = template.getJigsaws(blockPos, rotation);
         Util.shuffle(list, random);
         return list;
     }
