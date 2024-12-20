@@ -4,6 +4,7 @@ import com.finndog.mes.MESCommon;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;
+import com.google.gson.Strictness;
 import com.google.gson.reflect.TypeToken;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.resources.FileToIdConverter;
@@ -20,7 +21,8 @@ import java.util.List;
 import java.util.Map;
 
 public class StructurePieceCountsManager extends SimpleJsonResourceReloadListener<JsonElement> {
-    private static final Gson GSON = (new GsonBuilder()).setPrettyPrinting().setLenient().disableHtmlEscaping().excludeFieldsWithoutExposeAnnotation().create();
+    private static final Gson GSON = (new GsonBuilder()).setPrettyPrinting().setStrictness(
+        Strictness.LENIENT).disableHtmlEscaping().excludeFieldsWithoutExposeAnnotation().create();
     public final static StructurePieceCountsManager STRUCTURE_PIECE_COUNTS_MANAGER = new StructurePieceCountsManager();
 
     private Map<ResourceLocation, List<StructurePieceCountsObj>> StructureToPieceCountsObjs = new HashMap<>();
