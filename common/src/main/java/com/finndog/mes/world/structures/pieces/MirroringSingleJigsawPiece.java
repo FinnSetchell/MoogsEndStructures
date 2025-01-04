@@ -1,6 +1,7 @@
 package com.finndog.mes.world.structures.pieces;
 
 import com.finndog.mes.mixins.structures.SinglePoolElementAccessor;
+import com.finndog.mes.mixins.structures.TemplateAccessor;
 import com.finndog.mes.modinit.MESStructurePieces;
 import com.mojang.datafixers.util.Either;
 import com.mojang.serialization.Codec;
@@ -60,12 +61,31 @@ public class MirroringSingleJigsawPiece extends SinglePoolElement {
     }
 
     @Override
-    public List<StructureTemplate.StructureBlockInfo> getShuffledJigsawBlocks(StructureTemplateManager templateManager, BlockPos blockPos, Rotation rotation, RandomSource random) {
+    public List<StructureTemplate.JigsawBlockInfo> getShuffledJigsawBlocks(StructureTemplateManager templateManager, BlockPos blockPos, Rotation rotation, RandomSource random) {
         StructureTemplate template = this.getTemplate(templateManager);
-        ObjectArrayList<StructureTemplate.StructureBlockInfo> list = template.filterBlocks(blockPos, (new StructurePlaceSettings()).setRotation(rotation).setMirror(mirror), Blocks.JIGSAW, true);
+        ObjectArrayList<StructureTemplate.JigsawBlockInfo> list = getJigsaws(template, blockPos, (new StructurePlaceSettings()).setRotation(rotation).setMirror(mirror));
         Util.shuffle(list, random);
         return list;
     }
+
+    private ObjectArrayList<StructureTemplate.JigsawBlockInfo> getJigsaws(StructureTemplate template, BlockPos blockPos, StructurePlaceSettings structurePlaceSettings) {
+        if (((TemplateAccessor)template).mes_getPalettes().isEmpty()) {
+            return new ObjectArrayList<>();
+        }
+        else {
+            List<StructureTemplate.JigsawBlockInfo> list = structurePlaceSettings.getRandomPalette(((TemplateAccessor)template).mes_getPalettes(), blockPos).jigsaws();
+            ObjectArrayList<StructureTemplate.JigsawBlockInfo> list2 = new ObjectArrayList<>(list.size());
+
+            for (StructureTemplate.JigsawBlockInfo jigsawBlockInfo : list) {
+                StructureTemplate.StructureBlockInfo structureBlockInfo = jigsawBlockInfo.info();
+                list2.add(jigsawBlockInfo.withInfo(new StructureTemplate.StructureBlockInfo(StructureTemplate.calculateRelativePosition(structurePlaceSettings, structureBlockInfo.pos()).offset(blockPos), structureBlockInfo.state().rotate(structurePlaceSettings.getRotation()), structureBlockInfo.nbt())));
+            }
+
+            return list2;
+        }
+    }
+
+
 
     @Override
     public BoundingBox getBoundingBox(StructureTemplateManager templateManager, BlockPos blockPos, Rotation rotation) {

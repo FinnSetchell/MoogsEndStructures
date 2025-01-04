@@ -1,8 +1,6 @@
 package com.finndog.mes.utils;
 
 import com.finndog.mes.MESCommon;
-import com.finndog.mes.mixins.resources.NamespaceResourceManagerAccessor;
-import com.finndog.mes.mixins.resources.ReloadableResourceManagerImplAccessor;
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParseException;
@@ -10,14 +8,14 @@ import com.mojang.datafixers.util.Pair;
 import net.minecraft.core.*;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.StringTag;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.MinecraftServer;
-import net.minecraft.server.packs.PackResources;
-import net.minecraft.server.packs.PackType;
-import net.minecraft.server.packs.resources.FallbackResourceManager;
-import net.minecraft.server.packs.resources.IoSupplier;
+import net.minecraft.server.packs.resources.Resource;
 import net.minecraft.server.packs.resources.ResourceManager;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.EnchantmentTags;
 import net.minecraft.util.GsonHelper;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
@@ -81,43 +79,17 @@ public final class GeneralUtils {
 
     private static final Map<BlockState, Boolean> IS_FULLCUBE_MAP = new ConcurrentHashMap<>();
 
-    public static boolean isFullCube(BlockGetter world, BlockPos pos, BlockState state) {
+    public static boolean isFullCube(BlockState state) {
         if(state == null) return false;
-        return IS_FULLCUBE_MAP.computeIfAbsent(state, (stateIn) -> Block.isShapeFullBlock(stateIn.getOcclusionShape(world, pos)));
-    }
-
-    //////////////////////////////
-
-    // Helper method to make chests always face away from walls
-    public static BlockState orientateChest(ServerLevelAccessor blockView, BlockPos blockPos, BlockState blockState) {
-        BlockPos.MutableBlockPos mutable = new BlockPos.MutableBlockPos();
-        Direction wallDirection = blockState.getValue(HorizontalDirectionalBlock.FACING);
-
-        for(Direction facing : Direction.Plane.HORIZONTAL) {
-            mutable.set(blockPos).move(facing);
-
-            // Checks if wall is in this side
-            if (isFullCube(blockView, mutable, blockView.getBlockState(mutable))) {
-                wallDirection = facing;
-
-                // Exit early if facing open space opposite of wall
-                mutable.move(facing.getOpposite(), 2);
-                if(!blockView.getBlockState(mutable).isSolid()) {
-                    break;
-                }
-            }
-        }
-
-        // Make chest face away from wall
-        return blockState.setValue(HorizontalDirectionalBlock.FACING, wallDirection.getOpposite());
+        return IS_FULLCUBE_MAP.computeIfAbsent(state, (stateIn) -> Block.isShapeFullBlock(stateIn.getOcclusionShape()));
     }
 
     //////////////////////////////////////////////
 
     public static ItemStack enchantRandomly(RegistryAccess registryAccess, RandomSource random, ItemStack itemToEnchant, float chance) {
         if(random.nextFloat() < chance) {
-            List<Holder.Reference<Enchantment>> list = registryAccess.registryOrThrow(Registries.ENCHANTMENT).holders()
-                    .filter(holder -> holder.value().canEnchant(itemToEnchant)).toList();
+            List<Holder.Reference<Enchantment>> list = registryAccess.lookupOrThrow(Registries.ENCHANTMENT).listElements()
+                    .filter(holder -> holder.value().canEnchant(itemToEnchant) && holder.is(EnchantmentTags.ON_MOB_SPAWN_EQUIPMENT)).toList();
             if(!list.isEmpty()) {
                 Holder.Reference<Enchantment> enchantment = list.get(random.nextInt(list.size()));
                 // bias towards weaker enchantments
@@ -186,7 +158,7 @@ public final class GeneralUtils {
         ChunkAccess currentChunk = worldView.getChunk(mutable);
         BlockState currentState = currentChunk.getBlockState(mutable);
 
-        while(mutable.getY() >= worldView.getMinBuildHeight() && isReplaceableByStructures(currentState)) {
+        while(mutable.getY() >= worldView.getMinY() && isReplaceableByStructures(currentState)) {
             mutable.move(Direction.DOWN);
             currentState = currentChunk.getBlockState(mutable);
         }
@@ -215,48 +187,29 @@ public final class GeneralUtils {
     //////////////////////////////////////////////
 
     // More optimized with checking if the jigsaw blocks can connect
-    public static boolean canJigsawsAttach(StructureTemplate.StructureBlockInfo jigsaw1, StructureTemplate.StructureBlockInfo jigsaw2) {
-        FrontAndTop prop1 = jigsaw1.state().getValue(JigsawBlock.ORIENTATION);
-        FrontAndTop prop2 = jigsaw2.state().getValue(JigsawBlock.ORIENTATION);
-        String joint = jigsaw1.nbt().getString("joint");
-        if(joint.isEmpty()) {
-            joint = prop1.front().getAxis().isHorizontal() ? "aligned" : "rollable";
-        }
+    public static boolean canJigsawsAttach(StructureTemplate.JigsawBlockInfo jigsaw1, StructureTemplate.JigsawBlockInfo jigsaw2) {
+        FrontAndTop prop1 = jigsaw1.info().state().getValue(JigsawBlock.ORIENTATION);
+        FrontAndTop prop2 = jigsaw2.info().state().getValue(JigsawBlock.ORIENTATION);
 
-        boolean isRollable = joint.equals("rollable");
         return prop1.front() == prop2.front().getOpposite() &&
-                (isRollable || prop1.top() == prop2.top()) &&
-                jigsaw1.nbt().getString("target").equals(jigsaw2.nbt().getString("name"));
+                (prop1.top() == prop2.top() || isRollableJoint(jigsaw1, prop1)) &&
+                getStringMicroOptimised(jigsaw1.info().nbt(), "target").equals(getStringMicroOptimised(jigsaw2.info().nbt(), "name"));
     }
 
-    //////////////////////////////////////////////
-
-    /**
-     * Obtains all of the file streams for all files found in all datapacks with the given id.
-     *
-     * @return - Filestream list of all files found with id
-     */
-    public static List<InputStream> getAllFileStreams(ResourceManager resourceManager, ResourceLocation fileID) throws IOException {
-        List<InputStream> fileStreams = new ArrayList<>();
-
-        FallbackResourceManager namespaceResourceManager = ((ReloadableResourceManagerImplAccessor) resourceManager).mes_getNamespacedManagers().get(fileID.getNamespace());
-        List<FallbackResourceManager.PackEntry> allResourcePacks = ((NamespaceResourceManagerAccessor) namespaceResourceManager).mes_getFallbacks();
-
-        // Find the file with the given id and add its filestream to the list
-        for (FallbackResourceManager.PackEntry packEntry : allResourcePacks) {
-            PackResources resourcePack = packEntry.resources();
-            if (resourcePack != null) {
-                IoSupplier<InputStream> IoSupplier = resourcePack.getResource(PackType.SERVER_DATA, fileID);
-                if (IoSupplier != null) {
-                    InputStream inputStream = IoSupplier.get();
-                    fileStreams.add(inputStream);
-                }
-            }
+    private static boolean isRollableJoint(StructureTemplate.JigsawBlockInfo jigsaw1, FrontAndTop prop1) {
+        String joint = getStringMicroOptimised(jigsaw1.info().nbt(), "joint");
+        if(!joint.equals("rollable") && !joint.equals("aligned")) {
+            return !prop1.front().getAxis().isHorizontal();
         }
-
-        // Return filestream of all files matching id path
-        return fileStreams;
+        else {
+            return joint.equals("rollable");
+        }
     }
+
+    public static String getStringMicroOptimised(CompoundTag tag, String key) {
+        return tag.get(key) instanceof StringTag stringTag ? stringTag.getAsString() : "";
+    }
+    //////////////////////////////////////////////
 
     /**
      * Will grab all JSON objects from all datapacks's folder that is specified by the dataType parameter.
@@ -268,17 +221,17 @@ public final class GeneralUtils {
         int dataTypeLength = dataType.length() + 1;
 
         // Finds all JSON files paths within the pool_additions folder. NOTE: this is just the path rn. Not the actual files yet.
-        for (ResourceLocation fileIDWithExtension : resourceManager.listResources(dataType, (fileString) -> fileString.toString().endsWith(".json")).keySet()) {
-            String identifierPath = fileIDWithExtension.getPath();
+        for (Map.Entry<ResourceLocation, List<Resource>> resourceStackEntry : resourceManager.listResourceStacks(dataType, (fileString) -> fileString.toString().endsWith(".json")).entrySet()) {
+            String identifierPath = resourceStackEntry.getKey().getPath();
             ResourceLocation fileID = ResourceLocation.fromNamespaceAndPath(
-                    fileIDWithExtension.getNamespace(),
+                    resourceStackEntry.getKey().getNamespace(),
                     identifierPath.substring(dataTypeLength, identifierPath.length() - fileSuffixLength));
 
             try {
                 // getAllFileStreams will find files with the given ID. This part is what will loop over all matching files from all datapacks.
-                for (InputStream fileStream : GeneralUtils.getAllFileStreams(resourceManager, fileIDWithExtension)) {
+                for (Resource resource : resourceStackEntry.getValue()) {
+                    InputStream fileStream = resource.open();
                     try (Reader bufferedReader = new BufferedReader(new InputStreamReader(fileStream, StandardCharsets.UTF_8))) {
-
                         // Get the JSON from the file
                         JsonElement countsJSONElement = GsonHelper.fromJson(gson, bufferedReader, (Class<? extends JsonElement>) JsonElement.class);
                         if (countsJSONElement != null) {
@@ -295,7 +248,7 @@ public final class GeneralUtils {
                                     "(Moog's End Structures {} MERGER) Couldn't load data file {} from {} as it's null or empty",
                                     dataType,
                                     fileID,
-                                    fileIDWithExtension);
+                                    resourceStackEntry);
                         }
                     }
                 }
@@ -305,11 +258,12 @@ public final class GeneralUtils {
                         "(Moog's End Structures {} MERGER) Couldn't parse data file {} from {}",
                         dataType,
                         fileID,
-                        fileIDWithExtension,
+                        resourceStackEntry,
                         exception);
             }
         }
 
         return map;
     }
+
 }
