@@ -1,0 +1,14 @@
+{
+    "structures": [
+        {
+            "structure": "mes:chappel",
+            "weight": 1
+        }
+    ],
+    "placement": {
+        "type": "mes:advanced_random_spread",
+        "salt": 198186934,
+        "spacing": 46,
+        "separation": 10
+    }
+}

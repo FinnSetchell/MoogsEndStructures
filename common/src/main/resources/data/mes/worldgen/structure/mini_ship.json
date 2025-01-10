@@ -1,0 +1,24 @@
+{
+    "type": "mes:mes_generic_jigsaw_structure",
+    "start_pool": "mes:mini_ship_start_pool",
+    "size": 1,
+    "project_start_to_heightmap": "WORLD_SURFACE_WG",
+    "terrain_height_radius_check": 1,
+    "allowed_terrain_height_range": 4,
+    "biomes": "#mes:has_structure/end_biomes",
+    "step": "surface_structures",
+    "terrain_adaptation": "none",
+    "y_allowance": {
+        "min_y_allowed": 45
+    },
+    "start_height": {
+        "type": "minecraft:uniform",
+        "max_inclusive": {
+            "absolute": 40
+        },
+        "min_inclusive": {
+            "absolute": 20
+        }
+    },
+    "spawn_overrides": {}
+}
