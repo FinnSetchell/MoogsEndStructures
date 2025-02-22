@@ -14,10 +14,10 @@ import net.minecraft.nbt.NbtIo;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.MultiPackResourceManager;
 import net.minecraft.server.packs.resources.Resource;
+import net.minecraft.server.packs.resources.ResourceManager;
 import net.minecraft.util.datafix.DataFixTypes;
 import net.minecraft.util.datafix.DataFixers;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplate;
-import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nonnull;
@@ -34,19 +34,12 @@ public class StructureNbtUpdater implements DataProvider {
     private final PackOutput output;
     private final MultiPackResourceManager resources;
 
-    public StructureNbtUpdater(String basePath, String modid, ExistingFileHelper helper, PackOutput output) {
+    public StructureNbtUpdater(String basePath, String modid, ResourceManager resourceManager, PackOutput output) {
         this.basePath = basePath;
         this.modid = modid;
         this.output = output;
+        this.resources = (MultiPackResourceManager) resourceManager;
 
-        try {
-            Field serverData = ExistingFileHelper.class.getDeclaredField("serverData");
-            serverData.setAccessible(true);
-            resources = (MultiPackResourceManager)serverData.get(helper);
-        }
-        catch (NoSuchFieldException|IllegalAccessException e) {
-            throw new RuntimeException(e);
-        }
     }
 
     @Override

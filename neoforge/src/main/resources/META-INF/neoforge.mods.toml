@@ -29,3 +29,8 @@ license="https://github.com/FinnSetchell/MoogsEndStructures/blob/1.21/LICENSE"
     modId="minecraft"
     type="required"
     versionRange="[1.21,)"
+
+[[dependencies.mes]]
+    modId="neoforge"
+    type="required"
+    versionRange="[21.4.86-beta,)"
