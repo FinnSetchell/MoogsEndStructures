@@ -75,13 +75,13 @@ publishMods {
     modrinth {
         accessToken = providers.environmentVariable("MODRINTH_API_KEY")
         projectId = "r4PuRGfV"
-        minecraftVersions.add("1.21.7")
+        minecraftVersions.add("1.21.8")
     }
 
     curseforge {
         accessToken = providers.environmentVariable("CURSEFORGE_API_KEY")
         projectId = "892382"
-        minecraftVersions.add("1.21.7")
+        minecraftVersions.add("1.21.8")
         serverRequired = true
     }
 
