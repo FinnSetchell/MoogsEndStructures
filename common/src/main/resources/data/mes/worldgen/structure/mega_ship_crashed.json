@@ -12,13 +12,7 @@
         "min_y_allowed": 45
     },
     "start_height": {
-        "type": "minecraft:uniform",
-        "max_inclusive": {
-            "absolute": 0
-        },
-        "min_inclusive": {
-            "absolute": -10
-        }
+        "absolute": 0
     },
     "spawn_overrides": {
         "monster": {
