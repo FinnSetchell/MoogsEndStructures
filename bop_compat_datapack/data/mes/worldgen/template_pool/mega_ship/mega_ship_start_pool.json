@@ -1,12 +1,12 @@
 {
-    "name": "mes:mega_ship_deepslate_3/side_pool_side_3",
+    "name": "mes:mega_ship_start_pool",
     "fallback": "minecraft:empty",
     "elements": [
         {
             "weight": 1,
             "element": {
-                "location": "mes:mega_ship_deepslate_3_end_side_3",
-                "processors": "minecraft:empty",
+                "location": "mes:mega_ship",
+                "processors": "mes:mega_ship_bop",
                 "projection": "rigid",
                 "element_type": "minecraft:single_pool_element"
             }
