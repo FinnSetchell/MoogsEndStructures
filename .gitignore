@@ -4,7 +4,6 @@
 build/
 out/
 classes/
-gradle/wrapper
 
 # eclipse
 
@@ -29,3 +28,4 @@ bin/
 
 run/
 deps/
+/bop_compat_datapack/
