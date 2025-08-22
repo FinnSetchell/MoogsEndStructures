@@ -1,12 +1,12 @@
 {
-    "name": "mes:start_pool_middle",
+    "name": "mes:mega_ship_crashed_deepslate_start_pool",
     "fallback": "minecraft:empty",
     "elements": [
         {
             "weight": 1,
             "element": {
-                "location": "mes:mega_ship_middle",
-                "processors": "mes:elytra_item_frames",
+                "location": "mes:mega_ship_crashed_deepslate",
+                "processors": "minecraft:empty",
                 "projection": "rigid",
                 "element_type": "minecraft:single_pool_element"
             }
