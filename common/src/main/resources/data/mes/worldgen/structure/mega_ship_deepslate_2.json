@@ -1,14 +1,14 @@
 {
     "type": "mes:mes_generic_jigsaw_structure",
-    "start_pool": "mes:mega_ship/mega_ship_start_pool",
-    "size": 1,
+    "start_pool": "mes:mega_ship_deepslate_2/mega_ship_deepslate_2_start_pool",
+    "size": 3,
     "project_start_to_heightmap": "WORLD_SURFACE_WG",
     "terrain_height_radius_check": 1,
     "allowed_terrain_height_range": 4,
     "biomes": "#mes:has_structure/end_biomes",
     "step": "surface_structures",
     "terrain_adaptation": "none",
-    "min_y_allowed": 45,
+    "min_y_allowed": 50,
     "start_height": {
         "type": "minecraft:uniform",
         "max_inclusive": {
@@ -27,6 +27,12 @@
                     "maxCount": 3,
                     "minCount": 2,
                     "weight": 10
+                },
+                {
+                    "type": "minecraft:enderman",
+                    "maxCount": 5,
+                    "minCount": 3,
+                    "weight": 2
                 }
             ]
         }
