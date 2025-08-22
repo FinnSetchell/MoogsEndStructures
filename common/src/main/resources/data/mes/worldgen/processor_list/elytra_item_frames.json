@@ -1,0 +1,10 @@
+{
+  "processors": [
+    {
+      "processor_type": "mes:brewing_stand_processor",
+      "brewing_stand_chance": 1.0,
+      "min_potions": 1,
+      "max_potions": 3
+    }
+  ]
+}

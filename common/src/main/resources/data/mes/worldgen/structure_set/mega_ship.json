@@ -1,0 +1,14 @@
+{
+    "structures": [
+        {
+            "structure": "mes:mega_ship",
+            "weight": 1
+        }
+    ],
+    "placement": {
+        "type": "mes:advanced_random_spread",
+        "salt": 151031809,
+        "spacing": 77,
+        "separation": 15
+    }
+}
