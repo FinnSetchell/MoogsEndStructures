@@ -8,7 +8,9 @@
     "biomes": "#mes:has_structure/end_biomes",
     "step": "surface_structures",
     "terrain_adaptation": "none",
-    "min_y_allowed": 60,
+    "y_allowance": {
+        "min_y_allowed": 60
+    },
     "start_height": {
         "type": "minecraft:uniform",
         "max_inclusive": {
