@@ -1,5 +1,6 @@
 plugins {
     id "com.github.johnrengelman.shadow" version "7.1.2"
+    id "me.modmuss50.mod-publish-plugin" version "0.8.4"
 }
 
 architectury {
@@ -47,23 +48,27 @@ shadowJar {
     exclude "architectury.common.json"
 
     configurations = [project.configurations.shadowCommon]
-    classifier "dev-shadow"
+    archiveClassifier.set("dev-shadow")
 }
 
 remapJar {
     input.set shadowJar.archiveFile
     dependsOn shadowJar
-    classifier "forge"
+    archiveClassifier.set(null)
 }
 
 jar {
-    classifier "dev"
+    archiveClassifier.set("dev")
 }
 
 sourcesJar {
     def commonSources = project(":common").sourcesJar
     dependsOn commonSources
     from commonSources.archiveFile.map { zipTree(it) }
+}
+
+tasks.withType(Jar) {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 }
 
 components.java {
@@ -83,5 +88,38 @@ publishing {
     // See https://docs.gradle.org/current/userguide/publishing_maven.html for information on how to set up publishing.
     repositories {
         // Add repositories to publish to here.
+    }
+}
+
+File changeLog = rootProject.file("CHANGELOG.md")
+String changelogtext = changeLog.exists() ? changeLog.text : ""
+
+publishMods {
+    file = remapJar.archiveFile
+    changelog = changelogtext
+    type = STABLE
+
+    displayName = "MES ${project.version} [FORGE]"
+
+    modLoaders.add("forge")
+
+    modrinth {
+        accessToken = providers.environmentVariable("MODRINTH_API_KEY")
+        projectId = "r4PuRGfV"
+        minecraftVersionRange {
+            start = "1.20"
+            end = "1.20.4"
+        }
+
+    }
+
+    curseforge {
+        accessToken = providers.environmentVariable("CURSEFORGE_API_KEY")
+        projectId = "892382"
+        minecraftVersionRange {
+            start = "1.20"
+            end = "1.20.4"
+        }
+        serverRequired = true
     }
 }
