@@ -59,6 +59,47 @@ A datapack you can use to configure the mod.
 
 **VIDEOS:**
 
+### STRUCTURES
+
+This mod adds 25 unique End-themed structures to Minecraft! Here's a comprehensive list of all included structures:
+
+| Structure Name | Biome Tag | Generation Type | Rarity | Special Features |
+|---|---|---|---|---|
+| **Major Structures** |
+| Astral Hideaway | End Biomes | Surface | Normal | End dimension hideaway structure |
+| Ender Spire | End Biomes | Surface | Normal | Tower structure in the End |
+| Enderkeep Courtyard | End Biomes | Surface | Normal | Large courtyard structure (size 2) |
+| Enderskog | End Biomes | Surface | Normal | Forest-like structure in the End |
+| Enderwatch Tower | End Biomes | Surface | Normal | Watchtower structure |
+| Manuscript Shrine | End Biomes | Surface | Normal | Shrine structure for manuscripts |
+| Phantom Citadel | End Biomes | Surface | Normal | Large citadel structure (size 4) |
+| Monolith | End Biomes | Surface | Normal | Mysterious monolith structure |
+| Mythic Garden | End Biomes | Surface | Normal | Garden structure in the End |
+| Placid Prairie | End Biomes | Surface | Normal | Prairie-like floating structure |
+| Starlight Voyager | End Biomes | Surface | Normal | Voyager ship structure |
+| **Mega Ships** |
+| Mega Ship | End Biomes | Surface | Ultra Rare | Large ship (spacing 77), spawns shulkers & endermen |
+| Mega Ship Basic | End Biomes | Surface | Ultra Rare | Basic variant (spacing 80) |
+| Mega Ship Crashed | End Biomes | Surface | Ultra Rare | Crashed variant (spacing 75) |
+| Mega Ship Crashed 2 | End Biomes | Surface | Ultra Rare | Second crashed variant (spacing 72) |
+| Mega Ship Crashed Deepslate | End Biomes | Surface | Ultra Rare | Deepslate crashed variant (spacing 79) |
+| Mega Ship Deepslate | End Biomes | Surface | Ultra Rare | Deepslate variant (spacing 88) |
+| Mega Ship Deepslate 2 | End Biomes | Surface | Ultra Rare | Second deepslate variant (spacing 82) |
+| Mega Ship Deepslate 3 | End Biomes | Surface | Ultra Rare | Third deepslate variant (spacing 84) |
+| **Decorations** |
+| Astral Meteorite | End Biomes | Surface | Normal | Meteorite decoration structure |
+| Endscraps | End Biomes | Surface | Normal | Scrap decoration structure |
+| Enderpin Spikes | End Biomes | Surface | Common | Spike decoration (spacing 13) |
+| Ruined Pillar | End Biomes | Surface | Common | Ruined pillar decoration (spacing 10) |
+| **Biome Tags Reference** |
+| End Biomes | All End dimension biomes including vanilla End, End Islands, and modded End biomes |
+
+**Rarity Legend:**
+- **Common** (spacing 10-24): Very frequent structures, found regularly while exploring the End
+- **Normal** (spacing 25-50): Standard frequency structures, commonly encountered in the End
+- **Rare** (spacing 51-80): Less common structures, require more exploration to find
+- **Ultra Rare** (spacing 81+): Extremely rare structures, very difficult to find
+
 
 
 
