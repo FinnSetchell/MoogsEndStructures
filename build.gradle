@@ -53,7 +53,7 @@ publishMods {
     version = project.version.toString()
     // Release type (defaults to STABLE if not provided)
     type = STABLE
-    def displayPrefix = (project.findProperty('publishDisplayPrefix') ?: 'MTR') as String
+    def displayPrefix = (project.findProperty('publishDisplayPrefix') ?: 'MES') as String
     def displaySuffix = (project.findProperty('publishDisplaySuffix') ?: '[UNIVERSAL]') as String
     displayName = "${displayPrefix} ${project.version}-${mcVersion} ${displaySuffix}"
 
