@@ -76,7 +76,7 @@ publishMods {
         accessToken = providers.environmentVariable("MODRINTH_API_KEY")
         projectId = "r4PuRGfV"
         minecraftVersionRange {
-            start = "1.21.8"
+            start = "1.21.9"
             end = "1.21.9"
         }
     }
@@ -85,7 +85,7 @@ publishMods {
         accessToken = providers.environmentVariable("CURSEFORGE_API_KEY")
         projectId = "892382"
         minecraftVersionRange {
-            start = "1.21.8"
+            start = "1.21.9"
             end = "1.21.9"
         }
         serverRequired = true
