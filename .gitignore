@@ -5,6 +5,7 @@ build/
 out/
 classes/
 gradle/wrapper
+DEVELOPMENT_NOTES.md
 
 # eclipse
 

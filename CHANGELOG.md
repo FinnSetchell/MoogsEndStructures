@@ -2,19 +2,10 @@
 # Changelog
 
 ### Added
-- added the following structures:
-- Mega Ship Basic,
-- Mega Ship Crashed
-- Mega Ship Crashed 2
-- Mega Ship Crashed Deepslate
-- Mega Ship Deepslate
-- Mega Ship Deepslate 2
-- Mega Ship Deepslate 3
-
-- Also added Loot tables for those structures
 
 ### Changed
-- 
+- Updated JAR naming system to use the new format
+- Extended Minecraft compatibility to include 1.21.9 (now supports 1.21.8-1.21.9)
 
 ### Fixed
 - 
