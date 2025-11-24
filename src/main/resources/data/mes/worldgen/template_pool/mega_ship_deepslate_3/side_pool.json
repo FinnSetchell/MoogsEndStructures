@@ -5,7 +5,11 @@
         {
             "weight": 1,
             "element": {
-                "location": "mes:mega_ship_deepslate_3_middle",
+                "location": "mes:v1_21_0_4/mega_ship_deepslate_3_middle",
+                "locations": {
+                    "1.21-1.21.4": "mes:v1_21_0_4/mega_ship_deepslate_3_middle",
+                    "1.21.5-1.21.10": "mes:v1_21_5_10/mega_ship_deepslate_3_middle"
+                },
                 "processors": "minecraft:empty",
                 "projection": "rigid",
                 "element_type": "minecraft:single_pool_element"
