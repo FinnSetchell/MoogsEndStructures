@@ -6,7 +6,7 @@
     }
   ],
   "placement": {
-    "type": "mes:advanced_random_spread",
+    "type": "moogs_structures:advanced_random_spread",
     "salt": 477477412,
     "spacing": 27,
     "separation": 12,

@@ -1,5 +1,5 @@
 {
-    "type": "mes:mes_generic_jigsaw_structure",
+    "type": "moogs_structures:moogs_structures_generic_jigsaw_structure",
     "start_pool": "mes:mega_ship_deepslate_2/mega_ship_deepslate_2_start_pool",
     "size": 3,
     "project_start_to_heightmap": "WORLD_SURFACE_WG",
