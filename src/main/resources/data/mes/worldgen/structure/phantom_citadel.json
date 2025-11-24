@@ -1,6 +1,6 @@
 {
 
-  "type": "mes:mes_generic_jigsaw_structure",
+  "type": "moogs_structures:moogs_structures_generic_jigsaw_structure",
 
   "start_pool": "mes:phantom_citadel_start_pool",
 
