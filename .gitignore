@@ -1,0 +1,10 @@
+/bin/
+DEVELOPMENT_NOTES.md
+.idea
+.vscode
+.gradle
+fabric
+forge
+neoforge
+/build/*
+common/build
