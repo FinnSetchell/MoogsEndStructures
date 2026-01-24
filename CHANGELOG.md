@@ -1,3 +1,3 @@
 
 # Changelog
--converted to datapack  with dependency on MoogsStructureLib (moogs_structures)
+- Prevented some structures to spawn within 1000 blocks of world origin
