@@ -5,10 +5,10 @@
         {
             "weight": 1,
             "element": {
-                "location": "mes:v1_21_0_4/mega_ship_deepslate_3_end_side",
+                "location": "mes:v1_21_5_10/mega_ship_deepslate_3_end_side",
                 "locations": {
                     "1.21-1.21.4": "mes:v1_21_0_4/mega_ship_deepslate_3_end_side",
-                    "1.21.5-1.21.10": "mes:v1_21_5_10/mega_ship_deepslate_3_end_side"
+                    "1.21.5-1.21.11": "mes:v1_21_5_10/mega_ship_deepslate_3_end_side"
                 },
                 "processors": "minecraft:empty",
                 "projection": "rigid",

@@ -80,7 +80,7 @@ jobs:
       - name: Post Discord Banner
         shell: bash
         run: |
-          BANNER_URL=$(grep 'discordThumbnailUrl=' gradle.properties | cut -d'=' -f2)
+          BANNER_URL=$(grep 'discordBannerUrl=' gradle.properties | cut -d'=' -f2)
           ROLE_ID=$(grep 'discordRoleId=' gradle.properties | cut -d'=' -f2)
           AVATAR_URL=$(grep 'discordAvatarUrl=' gradle.properties | cut -d'=' -f2)
           curl -X POST "$DISCORD_WEBHOOK" \
