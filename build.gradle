@@ -194,7 +194,25 @@ ${changelogText.trim()}
         def colorHex = (project.findProperty('discordEmbedColor') ?: '#0f2b52').replace('#', '')
         def colorInt = Integer.parseInt(colorHex, 16)
         def thumb = project.findProperty('discordThumbnailUrl') as String
+        def bannerUrl = project.findProperty('discordBannerUrl') as String
         def avatarUrl = project.findProperty('discordAvatarUrl') as String
+
+        // Post banner message (first message — uses @[test] instead of real role ping)
+        if (bannerUrl) {
+            def bannerPayload = [username: "Moog's Mods (preview)", avatar_url: avatarUrl, content: "@[test]\n${bannerUrl}"]
+            def bannerJson = groovy.json.JsonOutput.toJson(bannerPayload)
+            def bannerConn = (HttpURLConnection) new URL(webhookUrl).openConnection()
+            bannerConn.requestMethod = 'POST'
+            bannerConn.doOutput = true
+            bannerConn.setRequestProperty('Content-Type', 'application/json')
+            bannerConn.outputStream.withWriter('UTF-8') { it.write(bannerJson) }
+            def bannerCode = bannerConn.responseCode
+            if (bannerCode in 200..299) {
+                println "✓ Discord banner preview posted (HTTP ${bannerCode})"
+            } else {
+                throw new GradleException("Discord banner preview failed: HTTP ${bannerCode}: ${bannerConn.errorStream?.text}")
+            }
+        }
 
         def embed = [title: "[PREVIEW] ${modName} ${project.version}", description: description, color: colorInt]
         if (thumb) embed.thumbnail = [url: thumb]
