@@ -1,4 +1,4 @@
-{
+﻿{
   "structures": [
     {
       "structure": "mes:astral_hideaway",
@@ -6,7 +6,7 @@
     }
   ],
   "placement": {
-    "type": "mes:advanced_random_spread",
+    "type": "moogs_structures:advanced_random_spread",
     "salt": 136568741,
     "spacing": 25,
     "separation": 15,

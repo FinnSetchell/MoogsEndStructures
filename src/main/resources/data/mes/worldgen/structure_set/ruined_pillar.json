@@ -1,4 +1,4 @@
-{
+﻿{
   "structures": [
     {
       "structure": "mes:ruined_pillar",
@@ -6,7 +6,7 @@
     }
   ],
   "placement": {
-    "type": "mes:advanced_random_spread",
+    "type": "moogs_structures:advanced_random_spread",
     "salt": 322652548,
     "spacing": 10,
     "separation": 7,

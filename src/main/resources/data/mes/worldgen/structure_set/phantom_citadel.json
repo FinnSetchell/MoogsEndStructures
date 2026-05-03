@@ -1,4 +1,4 @@
-{
+﻿{
   "structures": [
     {
       "structure": "mes:phantom_citadel",
@@ -6,7 +6,7 @@
     }
   ],
   "placement": {
-    "type": "mes:advanced_random_spread",
+    "type": "moogs_structures:advanced_random_spread",
     "salt": 132545874,
     "spacing": 35,
     "separation": 20,

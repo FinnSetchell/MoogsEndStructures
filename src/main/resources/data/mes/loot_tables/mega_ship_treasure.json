@@ -107,13 +107,6 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:shulker_box",
-          "functions": [
-            {
-              "function": "minecraft:set_name",
-              "tag": "{display:{Name:'{\"text\":\"Rare Ender Crate\"}'}}",
-              "name": "Rare Ender Crate"
-            }
-          ],
           "weight": 2
         },
         {

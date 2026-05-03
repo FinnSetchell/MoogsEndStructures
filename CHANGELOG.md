@@ -6,5 +6,14 @@
 
 ### Added
 - Converted to datapack with dependency on MoogsStructureLib (moogs_structures)
+- New loot tables for empty barrels: a minimal end-themed junk table and a rarer mid-tier variant
+- All empty containers now have loot tables assigned
+
+### Fixed
+- All custom type IDs updated to use the correct moogs_structures namespace
+- Replaced all vanilla end city treasure references with a custom equivalent
+- Fixed sign NBT format incompatible with 1.20
+- Removed broken entry from Mega Ship Crashed Deepslate's top pool
+- Removed 5 unused processor lists
 
 ---

@@ -1,4 +1,4 @@
-{
+﻿{
     "structures": [
         {
             "structure": "mes:mega_ship_basic",
@@ -6,7 +6,7 @@
         }
     ],
     "placement": {
-        "type": "mes:advanced_random_spread",
+        "type": "moogs_structures:advanced_random_spread",
         "salt": 665221487,
         "spacing": 80,
         "separation": 60,
