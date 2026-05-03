@@ -7,16 +7,36 @@
     "authors": [
       "FinnDog"
     ],
+    "contributors": [
+      "Phantax"
+    ],
     "contact": {
       "homepage": "${mod_homepage}",
       "sources": "${mod_sources}",
-      "issues": "${mod_issues}"
+      "issues": "${mod_issues}",
+      "discord": "${mod_discord}",
+      "ko-fi": "${mod_kofi}",
+      "curseforge": "${mod_curseforge}",
+      "modrinth": "${mod_modrinth}"
     },
     "license": "GNU Lesser General Public License v3.0",
-    "icon": "icon.png",
+    "icon": "assets/mes/icon.png",
     "environment": "*",
     "depends": {
       "fabric-resource-loader-v0": "*",
       "moogs_structures": "*"
+    },
+    "custom": {
+      "modmenu": {
+        "links": {
+          "mes.releases": "${mod_releases}",
+          "modmenu.discord": "${mod_discord}",
+          "mes.kofi": "${mod_kofi}",
+          "mes.curseforge": "${mod_curseforge}",
+          "mes.modrinth": "${mod_modrinth}"
+        },
+        "parent": "moogs_structures",
+        "update_checker": true
+      }
     }
   }
