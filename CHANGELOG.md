@@ -4,7 +4,12 @@
 
 ## [2.0.1] - 2026-05-03
 
-_Pending. Update this header date and replace this line with the actual changes before tagging._
+### Added
+- Added 3 new loot tables: `end_common`, `end_uncommon`, `end_rare`
+- Assigned loot tables to containers in: enderwatch_tower, manuscript_shrine, monolith, mythic_garden, phantom_citadel, placid_prairie, starlight_voyager
+
+### Removed
+- Removed 21 unused overworld loot tables
 
 ---
 
