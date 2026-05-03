@@ -1,10 +1,31 @@
-/bin/
-DEVELOPMENT_NOTES.md
-.idea
-.vscode
-.gradle
-fabric
-forge
-neoforge
-/build/*
-common/build
+# Build output
+.gradle/
+build/
+bin/
+out/
+
+# IDE - IntelliJ
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# IDE - VS Code
+.vscode/
+.vscode-test/
+
+# IDE - Eclipse
+.settings/
+.project
+.classpath
+.factorypath
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Personal dev notes (not for distribution)
+NAMESPACE_GUIDE.md
+
+# NOTE: gradlew, gradlew.bat, and gradle/wrapper/gradle-wrapper.{jar,properties}
+# MUST be committed. Do NOT add them here - CI relies on them.
