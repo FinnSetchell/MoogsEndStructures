@@ -1,36 +1,31 @@
-# Build outputs
+# Build output
+.gradle/
 build/
+bin/
 out/
-classes/
-*.class
 
-# IDE files
+# IDE - IntelliJ
 .idea/
 *.iml
-*.ipr
 *.iws
+*.ipr
+
+# IDE - VS Code
 .vscode/
-*.swp
-*.swo
-*~
+.vscode-test/
 
-# Minecraft specific
-world/
-saves/
-debug/
-crash-reports/
-logs/
-*.lock
+# IDE - Eclipse
+.settings/
+.project
+.classpath
+.factorypath
 
-# Gradle
-.gradle/
-gradle-app.setting
-!gradle-wrapper.jar
-!gradle-wrapper.properties
-gradlew
-gradlew.bat
-gradle/
+# OS
+.DS_Store
+Thumbs.db
 
+# Personal dev notes (not for distribution)
+NAMESPACE_GUIDE.md
 
-# Git
-.gitignore
+# NOTE: gradlew, gradlew.bat, and gradle/wrapper/gradle-wrapper.{jar,properties}
+# MUST be committed. Do NOT add them here - CI relies on them.
