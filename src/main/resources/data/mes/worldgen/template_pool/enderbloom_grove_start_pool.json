@@ -1,15 +1,15 @@
 {
-  "fallback": "minecraft:empty",
-
-  "elements": [
-    {
-      "weight": 1,
-      "element": {
-        "location": "mes:enderbloom_grove",
-        "processors": "minecraft:empty",
-        "projection": "rigid",
-        "element_type": "minecraft:single_pool_element"
-      }
-    }
-  ]
+    "fallback": "minecraft:empty",
+    "elements": [
+        {
+            "weight": 1,
+            "element": {
+                "location": "mes:enderbloom_grove",
+                "processors": "minecraft:empty",
+                "projection": "rigid",
+                "element_type": "minecraft:single_pool_element"
+            }
+        }
+    ],
+    "name": "mes:enderbloom_grove_start_pool"
 }

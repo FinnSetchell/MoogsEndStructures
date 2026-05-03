@@ -1,11 +1,11 @@
 {
-    "name": "mes:mega_ship_deepslate_2_start_pool",
+    "name": "mes:mega_ship_deepslate_2/mega_ship_deepslate_2_start_pool",
     "fallback": "minecraft:empty",
     "elements": [
         {
             "weight": 1,
             "element": {
-                "location": "mes:v1_21_0_4/mega_ship_deepslate_2",
+                "location": "mes:v1_21_5_10/mega_ship_deepslate_2",
                 "locations": {
                     "1.21-1.21.4": "mes:v1_21_0_4/mega_ship_deepslate_2",
                     "1.21.5-1.21.11": "mes:v1_21_5_10/mega_ship_deepslate_2"
