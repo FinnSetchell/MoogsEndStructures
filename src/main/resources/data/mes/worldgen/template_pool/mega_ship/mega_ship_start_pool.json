@@ -5,14 +5,10 @@
         {
             "weight": 1,
             "element": {
-                "location": "mes:v1_21_5_10/mega_ship",
-                "locations": {
-                    "1.21-1.21.4": "mes:v1_21_0_4/mega_ship",
-                    "1.21.5-1.21.11": "mes:v1_21_5_10/mega_ship"
-                },
+                "location": "mes:mega_ship/mega_ship",
                 "processors": "minecraft:empty",
                 "projection": "rigid",
-                "element_type": "moogs_structures:versioned_single_pool_element"
+                "element_type": "minecraft:single_pool_element"
             }
         }
     ]
