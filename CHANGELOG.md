@@ -2,9 +2,11 @@
 
 ---
 
-## [2.0.2] - 2026-05-03
+## [2.0.2] - 2026-05-04
 
-_Pending. Update this header date and replace this line with the actual changes before tagging._
+### Fixed
+- Converted stray entity items from old NBT format (pre-1.20.5) to new component format for 1.20.5+ compatibility
+- Added versioned structure pool elements for mega ship structures containing strays, serving old-format NBTs for 1.20-1.20.4 and new-format NBTs for 1.20.5-1.20.6
 
 ---
 
