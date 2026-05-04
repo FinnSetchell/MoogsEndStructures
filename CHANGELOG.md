@@ -11,6 +11,10 @@
 ### Fixed
 - Removed a broken template pool from the Crashed Deepslate Mega Ship that referenced NBT files which don't exist
 
+### Changed
+- Consolidated all mega ship NBTs from versioned folders (v1_21_0_4, v1_21_5_10) into a single `mega_ship/` subfolder as files were identical across versions
+- Removed versioned pool elements from all mega ship pools except mega_ship_deepslate_2/side_pool (which still needs versioning for the chain -> iron_chain rename in 1.21.9)
+
 ### Removed
 - Removed 18 unused loot table files that were leftover from earlier development
 
