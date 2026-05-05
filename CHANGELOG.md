@@ -2,9 +2,10 @@
 
 ---
 
-## [2.0.3] - 2026-05-04
+## [2.0.3] - 2026-05-05
 
-_Pending. Update this header date and replace this line with the actual changes before tagging._
+### Fixed
+- Fixed server crash during `mega_ship_deepslate_2_middle.nbt` generation
 
 ---
 
