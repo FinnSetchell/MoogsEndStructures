@@ -2,9 +2,10 @@
 
 ---
 
-## [2.0.3] - 2026-05-04
+## [2.0.3] - 2026-05-22
 
-_Pending. Update this header date and replace this line with the actual changes before tagging._
+### Fixed
+- Versioned structures now have a defined path for Minecraft 26.1–26.1.2, so the game stops logging "no version mapping matched" warnings and no longer falls back to an older structure template.
 
 ---
 
