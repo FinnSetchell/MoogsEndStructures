@@ -172,7 +172,7 @@ publishMods {
             end = project.findProperty('publishMcEnd')
         }
         requires {
-            slug = "moogs-end-structures"
+            slug = "mes-moogs-end-structures"
         }
     }
 
