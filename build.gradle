@@ -180,7 +180,7 @@ publishMods {
         }
         extraMcVersions.each { minecraftVersions.add(it) }
         requires {
-            slug = "moogs-end-structures"
+            slug = "mes-moogs-end-structures"
         }
     }
 
