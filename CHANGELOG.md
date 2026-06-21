@@ -2,6 +2,13 @@
 
 ---
 
+## [2.0.5] - 2026-06-21
+
+### Changed
+- mc 26.2 support
+
+---
+
 ## [2.0.4] - 2026-05-22
 
 _Pending. Update this header date and replace this line with the actual changes before tagging._
