@@ -29,3 +29,6 @@ NAMESPACE_GUIDE.md
 
 # NOTE: gradlew, gradlew.bat, and gradle/wrapper/gradle-wrapper.{jar,properties}
 # MUST be committed. Do NOT add them here - CI relies on them.
+
+# Python bytecode from the helper scripts in scripts/
+__pycache__/
