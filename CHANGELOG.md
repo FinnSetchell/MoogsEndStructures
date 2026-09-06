@@ -2,16 +2,22 @@
 
 ---
 
-## [2.0.5] - 2026-06-21
+## [2.1.0] - 2026-09-06
+
+### Added
+- Every mega ship now has a proper crew. Each intact ship is led by a captain, backed by sword-carrying guards and archers, all kitted out in armoured gear with trims
+- Two of the deepslate ships now fly decorated banners
 
 ### Changed
-- mc 26.2 support
+- Ship crews are rolled fresh every time a ship generates
+- The crashed mega ships now get buried into the terrain they generate in instead of on top. This makes generation look a lot more natural
+- Mega ship treasure chests hand out fewer netherite ingots and noticeably fewer end crystals
+- The overgrown vines on the placid prairie have been trimmed back to varied lengths
+- Every structure has been rebuilt for each Minecraft version it supports, fixing a range of small visual and loading problems
+- The pack now loads on Minecraft 26.2
 
----
-
-## [2.0.4] - 2026-05-22
-
-_Pending. Update this header date and replace this line with the actual changes before tagging._
+### Fixed
+- A few chests that always held the exact same handful of items now roll real loot, like every other chest in the mod
 
 ---
 
