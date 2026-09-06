@@ -1,0 +1,34 @@
+{
+    "name": "mes:mobs/bow",
+    "fallback": "minecraft:empty",
+    "elements": [
+        {
+            "weight": 3,
+            "element": {
+                "element_type": "moogs_structures:versioned_single_pool_element",
+                "location": "mes:1_20_5/mobs/stray",
+                "locations": {
+                    "1.20-1.20.1": "mes:1_20_0/mobs/stray",
+                    "1.20.2-1.20.4": "mes:1_20_2/mobs/stray",
+                    "1.20.5-1.20.6": "mes:1_20_5/mobs/stray"
+                },
+                "processors": "minecraft:empty",
+                "projection": "rigid"
+            }
+        },
+        {
+            "weight": 1,
+            "element": {
+                "element_type": "moogs_structures:versioned_single_pool_element",
+                "location": "mes:1_20_5/mobs/marksman",
+                "locations": {
+                    "1.20-1.20.1": "mes:1_20_0/mobs/marksman",
+                    "1.20.2-1.20.4": "mes:1_20_2/mobs/marksman",
+                    "1.20.5-1.20.6": "mes:1_20_5/mobs/marksman"
+                },
+                "processors": "minecraft:empty",
+                "projection": "rigid"
+            }
+        }
+    ]
+}

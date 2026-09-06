@@ -1,15 +1,18 @@
 {
-  "fallback": "minecraft:empty",
-
-  "elements": [
-    {
-      "weight": 1,
-      "element": {
-        "location": "mes:decoration/astral_meteorite",
-        "processors": "minecraft:empty",
-        "projection": "rigid",
-        "element_type": "minecraft:single_pool_element"
-      }
-    }
-  ]
+    "fallback": "minecraft:empty",
+    "elements": [
+        {
+            "weight": 1,
+            "element": {
+                "element_type": "moogs_structures:versioned_single_pool_element",
+                "location": "mes:1_20_5/decoration/astral_meteorite",
+                "locations": {
+                    "1.20-1.20.4": "mes:1_20_0/decoration/astral_meteorite",
+                    "1.20.5-1.20.6": "mes:1_20_5/decoration/astral_meteorite"
+                },
+                "processors": "minecraft:empty",
+                "projection": "rigid"
+            }
+        }
+    ]
 }

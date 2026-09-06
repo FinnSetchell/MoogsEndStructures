@@ -1,24 +1,29 @@
 {
-  "fallback": "minecraft:empty",
-
-  "elements": [
-    {
-      "weight": 1,
-      "element": {
-        "location": "mes:decoration/enderpin_spikes/enderpin_spikes_1",
-        "processors": "minecraft:empty",
-        "projection": "rigid",
-        "element_type": "minecraft:single_pool_element"
-      }
-    },
-    {
-      "weight": 1,
-      "element": {
-        "location": "mes:decoration/enderpin_spikes/enderpin_spikes_2",
-        "processors": "minecraft:empty",
-        "projection": "rigid",
-        "element_type": "minecraft:single_pool_element"
-      }
-    }
-  ]
+    "fallback": "minecraft:empty",
+    "elements": [
+        {
+            "weight": 1,
+            "element": {
+                "element_type": "moogs_structures:versioned_single_pool_element",
+                "location": "mes:1_20_0/decoration/enderpin_spikes/enderpin_spikes_1",
+                "locations": {
+                    "1.20-1.20.6": "mes:1_20_0/decoration/enderpin_spikes/enderpin_spikes_1"
+                },
+                "processors": "minecraft:empty",
+                "projection": "rigid"
+            }
+        },
+        {
+            "weight": 1,
+            "element": {
+                "element_type": "moogs_structures:versioned_single_pool_element",
+                "location": "mes:1_20_0/decoration/enderpin_spikes/enderpin_spikes_2",
+                "locations": {
+                    "1.20-1.20.6": "mes:1_20_0/decoration/enderpin_spikes/enderpin_spikes_2"
+                },
+                "processors": "minecraft:empty",
+                "projection": "rigid"
+            }
+        }
+    ]
 }

@@ -1,0 +1,33 @@
+{
+    "name": "mes:mobs/sword",
+    "fallback": "minecraft:empty",
+    "elements": [
+        {
+            "weight": 3,
+            "element": {
+                "element_type": "moogs_structures:versioned_single_pool_element",
+                "location": "mes:1_20_5/mobs/deckhand",
+                "locations": {
+                    "1.20-1.20.4": "mes:1_20_0/mobs/deckhand",
+                    "1.20.5-1.20.6": "mes:1_20_5/mobs/deckhand"
+                },
+                "processors": "minecraft:empty",
+                "projection": "rigid"
+            }
+        },
+        {
+            "weight": 1,
+            "element": {
+                "element_type": "moogs_structures:versioned_single_pool_element",
+                "location": "mes:1_20_5/mobs/corsair",
+                "locations": {
+                    "1.20-1.20.1": "mes:1_20_0/mobs/corsair",
+                    "1.20.2-1.20.4": "mes:1_20_2/mobs/corsair",
+                    "1.20.5-1.20.6": "mes:1_20_5/mobs/corsair"
+                },
+                "processors": "minecraft:empty",
+                "projection": "rigid"
+            }
+        }
+    ]
+}
