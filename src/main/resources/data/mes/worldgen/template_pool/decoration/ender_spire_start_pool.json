@@ -4,10 +4,13 @@
         {
             "weight": 1,
             "element": {
-                "location": "mes:decoration/ender_spire",
+                "element_type": "moogs_structures:versioned_single_pool_element",
+                "location": "mes:1_21_0/decoration/ender_spire",
+                "locations": {
+                    "1.21-26.2": "mes:1_21_0/decoration/ender_spire"
+                },
                 "processors": "minecraft:empty",
-                "projection": "rigid",
-                "element_type": "minecraft:single_pool_element"
+                "projection": "rigid"
             }
         }
     ],

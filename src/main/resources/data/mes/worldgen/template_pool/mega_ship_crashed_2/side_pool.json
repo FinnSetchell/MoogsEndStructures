@@ -1,15 +1,19 @@
 {
-    "name": "mes:start_pool_middle",
-    "fallback": "minecraft:empty",
-    "elements": [
-        {
-            "weight": 1,
-            "element": {
-                "location": "mes:mega_ship/mega_ship_crashed_2_middle",
-                "processors": "minecraft:empty",
-                "projection": "rigid",
-                "element_type": "minecraft:single_pool_element"
-            }
+  "name": "mes:start_pool_middle",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "location": "mes:1_21_5/mega_ship/mega_ship_crashed_2_middle",
+        "processors": "minecraft:empty",
+        "projection": "rigid",
+        "element_type": "moogs_structures:versioned_single_pool_element",
+        "locations": {
+          "1.21-1.21.4": "mes:1_21_0/mega_ship/mega_ship_crashed_2_middle",
+          "1.21.5-26.2": "mes:1_21_5/mega_ship/mega_ship_crashed_2_middle"
         }
-    ]
+      }
+    }
+  ]
 }

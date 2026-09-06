@@ -1,22 +1,18 @@
 {
-  "name": "mes:astral_hideaway_start_pool",
-
-  "fallback": "minecraft:empty",
-
-  "elements": [
-    {
-
-      "weight": 1,
-      "element": {
-
-        "location": "mes:astral_hideaway",
-
-        "processors": "minecraft:empty",
-
-        "projection": "rigid",
-
-        "element_type": "minecraft:single_pool_element"
-      }
-    }
-  ]
+    "name": "mes:astral_hideaway_start_pool",
+    "fallback": "minecraft:empty",
+    "elements": [
+        {
+            "weight": 1,
+            "element": {
+                "element_type": "moogs_structures:versioned_single_pool_element",
+                "location": "mes:1_21_0/astral_hideaway",
+                "locations": {
+                    "1.21-26.2": "mes:1_21_0/astral_hideaway"
+                },
+                "processors": "minecraft:empty",
+                "projection": "rigid"
+            }
+        }
+    ]
 }

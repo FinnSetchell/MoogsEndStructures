@@ -1,22 +1,19 @@
 {
-  "name": "mes:manuscript_shrine_start_pool",
-
-  "fallback": "minecraft:empty",
-
-  "elements": [
-    {
-
-      "weight": 1,
-      "element": {
-
-        "location": "mes:manuscript_shrine",
-
-        "processors": "minecraft:empty",
-
-        "projection": "rigid",
-
-        "element_type": "minecraft:single_pool_element"
-      }
-    }
-  ]
+    "name": "mes:manuscript_shrine_start_pool",
+    "fallback": "minecraft:empty",
+    "elements": [
+        {
+            "weight": 1,
+            "element": {
+                "element_type": "moogs_structures:versioned_single_pool_element",
+                "location": "mes:1_21_9/manuscript_shrine",
+                "locations": {
+                    "1.21-1.21.8": "mes:1_21_0/manuscript_shrine",
+                    "1.21.9-26.2": "mes:1_21_9/manuscript_shrine"
+                },
+                "processors": "minecraft:empty",
+                "projection": "rigid"
+            }
+        }
+    ]
 }

@@ -1,21 +1,19 @@
 {
   "name": "mes:starlight_voyager_start_pool",
-
   "fallback": "minecraft:empty",
-
   "elements": [
     {
-
       "weight": 1,
       "element": {
-
-        "location": "mes:starlight_voyager",
-
+        "location": "mes:1_21_5/starlight_voyager",
         "processors": "minecraft:empty",
-
         "projection": "rigid",
-
-        "element_type": "minecraft:single_pool_element"
+        "element_type": "moogs_structures:versioned_single_pool_element",
+        "locations": {
+          "1.21-1.21.1": "mes:1_21_0/starlight_voyager",
+          "1.21.2-1.21.4": "mes:1_21_2/starlight_voyager",
+          "1.21.5-26.2": "mes:1_21_5/starlight_voyager"
+        }
       }
     }
   ]

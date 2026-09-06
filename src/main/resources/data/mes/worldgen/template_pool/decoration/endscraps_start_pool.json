@@ -1,42 +1,54 @@
 {
-    "fallback": "minecraft:empty",
-    "elements": [
-        {
-            "weight": 1,
-            "element": {
-                "location": "mes:decoration/endscraps/endscraps_1",
-                "processors": "minecraft:empty",
-                "projection": "rigid",
-                "element_type": "minecraft:single_pool_element"
-            }
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "moogs_structures:versioned_single_pool_element",
+        "location": "mes:1_21_0/decoration/endscraps/endscraps_1",
+        "locations": {
+          "1.21-26.2": "mes:1_21_0/decoration/endscraps/endscraps_1"
         },
-        {
-            "weight": 1,
-            "element": {
-                "location": "mes:decoration/endscraps/endscraps_2",
-                "processors": "minecraft:empty",
-                "projection": "rigid",
-                "element_type": "minecraft:single_pool_element"
-            }
+        "processors": "minecraft:empty",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "moogs_structures:versioned_single_pool_element",
+        "location": "mes:1_21_0/decoration/endscraps/endscraps_2",
+        "locations": {
+          "1.21-26.2": "mes:1_21_0/decoration/endscraps/endscraps_2"
         },
-        {
-            "weight": 1,
-            "element": {
-                "location": "mes:decoration/endscraps/endscraps_3",
-                "processors": "minecraft:empty",
-                "projection": "rigid",
-                "element_type": "minecraft:single_pool_element"
-            }
+        "processors": "minecraft:empty",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "moogs_structures:versioned_single_pool_element",
+        "location": "mes:1_21_0/decoration/endscraps/endscraps_3",
+        "locations": {
+          "1.21-26.2": "mes:1_21_0/decoration/endscraps/endscraps_3"
         },
-        {
-            "weight": 1,
-            "element": {
-                "location": "mes:decoration/endscraps/endscraps_4",
-                "processors": "minecraft:empty",
-                "projection": "rigid",
-                "element_type": "minecraft:single_pool_element"
-            }
-        }
-    ],
-    "name": "mes:decoration/endscraps_start_pool"
+        "processors": "minecraft:empty",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "moogs_structures:versioned_single_pool_element",
+        "location": "mes:1_21_0/decoration/endscraps/endscraps_4",
+        "locations": {
+          "1.21-26.2": "mes:1_21_0/decoration/endscraps/endscraps_4"
+        },
+        "processors": "minecraft:empty",
+        "projection": "rigid"
+      }
+    }
+  ],
+  "name": "mes:decoration/endscraps_start_pool"
 }
