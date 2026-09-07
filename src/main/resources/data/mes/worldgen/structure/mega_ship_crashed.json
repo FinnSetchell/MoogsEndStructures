@@ -7,7 +7,7 @@
     "allowed_terrain_height_range": 4,
     "biomes": "#mes:has_structure/end_biomes",
     "step": "surface_structures",
-    "terrain_adaptation": "bury",
+    "terrain_adaptation": "none",
     "y_allowance": {
         "min_y_allowed": 45
     },
@@ -26,5 +26,6 @@
                 }
             ]
         }
-    }
+    },
+    "burying_type": "AVERAGE_LAND"
 }
