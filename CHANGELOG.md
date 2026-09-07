@@ -19,6 +19,7 @@
 
 ### Fixed
 - A few chests that always held the exact same handful of items now roll real loot, like every other chest in the mod
+- Chests and barrels that generated completely empty now hold proper loot
 - Brushing suspicious sand now turns up End themed finds. It used to give nothing at all
 
 ---
