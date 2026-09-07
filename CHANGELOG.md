@@ -12,7 +12,7 @@
 ### Changed
 - Ship crews are rolled fresh every time a ship generates
 - The crashed mega ships now get buried into the terrain they generate in instead of on top. This makes generation look a lot more natural
-- Mega ship treasure chests hand out fewer netherite ingots and noticeably fewer end crystals
+- Mega ship treasure chests hand out fewer netherite ingots, noticeably fewer end crystals, and nether stars are now a genuinely rare find
 - The overgrown vines on the placid prairie have been trimmed back to varied lengths
 - Every structure has been rebuilt for each Minecraft version it supports, fixing a range of small visual and loading problems
 
