@@ -7,6 +7,7 @@
 ### Added
 - Every mega ship now has a proper crew. Each intact ship is led by a captain, backed by sword-carrying guards and archers, all kitted out in armoured gear with trims
 - Two of the deepslate ships now fly decorated banners
+- Every structure now has its own toggle, spacing slider and preview button in the mod's config screen
 
 ### Changed
 - Ship crews are rolled fresh every time a ship generates
@@ -18,6 +19,7 @@
 
 ### Fixed
 - A few chests that always held the exact same handful of items now roll real loot, like every other chest in the mod
+- Brushing suspicious sand now turns up End themed finds. It used to give nothing at all
 
 ---
 
