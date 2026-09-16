@@ -7,7 +7,7 @@
         "element_type": "moogs_structures:versioned_single_pool_element",
         "location": "mes:1_21_0/decoration/endscraps/endscraps_1",
         "locations": {
-          "1.21-26.2": "mes:1_21_0/decoration/endscraps/endscraps_1"
+          "1.21-26.3": "mes:1_21_0/decoration/endscraps/endscraps_1"
         },
         "processors": "minecraft:empty",
         "projection": "rigid"
@@ -19,7 +19,7 @@
         "element_type": "moogs_structures:versioned_single_pool_element",
         "location": "mes:1_21_0/decoration/endscraps/endscraps_2",
         "locations": {
-          "1.21-26.2": "mes:1_21_0/decoration/endscraps/endscraps_2"
+          "1.21-26.3": "mes:1_21_0/decoration/endscraps/endscraps_2"
         },
         "processors": "minecraft:empty",
         "projection": "rigid"
@@ -31,7 +31,7 @@
         "element_type": "moogs_structures:versioned_single_pool_element",
         "location": "mes:1_21_0/decoration/endscraps/endscraps_3",
         "locations": {
-          "1.21-26.2": "mes:1_21_0/decoration/endscraps/endscraps_3"
+          "1.21-26.3": "mes:1_21_0/decoration/endscraps/endscraps_3"
         },
         "processors": "minecraft:empty",
         "projection": "rigid"
@@ -43,7 +43,7 @@
         "element_type": "moogs_structures:versioned_single_pool_element",
         "location": "mes:1_21_0/decoration/endscraps/endscraps_4",
         "locations": {
-          "1.21-26.2": "mes:1_21_0/decoration/endscraps/endscraps_4"
+          "1.21-26.3": "mes:1_21_0/decoration/endscraps/endscraps_4"
         },
         "processors": "minecraft:empty",
         "projection": "rigid"

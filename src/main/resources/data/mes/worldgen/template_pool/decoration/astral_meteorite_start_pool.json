@@ -7,7 +7,7 @@
                 "element_type": "moogs_structures:versioned_single_pool_element",
                 "location": "mes:1_21_0/decoration/astral_meteorite",
                 "locations": {
-                    "1.21-26.2": "mes:1_21_0/decoration/astral_meteorite"
+                    "1.21-26.3": "mes:1_21_0/decoration/astral_meteorite"
                 },
                 "processors": "minecraft:empty",
                 "projection": "rigid"

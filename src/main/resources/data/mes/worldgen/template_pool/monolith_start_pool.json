@@ -8,7 +8,7 @@
                 "location": "mes:1_21_9/monolith/monolith_1",
                 "locations": {
                     "1.21-1.21.8": "mes:1_21_0/monolith/monolith_1",
-                    "1.21.9-26.2": "mes:1_21_9/monolith/monolith_1"
+                    "1.21.9-26.3": "mes:1_21_9/monolith/monolith_1"
                 },
                 "processors": "minecraft:empty",
                 "projection": "rigid"
@@ -21,7 +21,7 @@
                 "location": "mes:1_21_9/monolith/monolith_2",
                 "locations": {
                     "1.21-1.21.8": "mes:1_21_0/monolith/monolith_2",
-                    "1.21.9-26.2": "mes:1_21_9/monolith/monolith_2"
+                    "1.21.9-26.3": "mes:1_21_9/monolith/monolith_2"
                 },
                 "processors": "minecraft:empty",
                 "projection": "rigid"
@@ -34,7 +34,7 @@
                 "location": "mes:1_21_9/monolith/monolith_3",
                 "locations": {
                     "1.21-1.21.8": "mes:1_21_0/monolith/monolith_3",
-                    "1.21.9-26.2": "mes:1_21_9/monolith/monolith_3"
+                    "1.21.9-26.3": "mes:1_21_9/monolith/monolith_3"
                 },
                 "processors": "minecraft:empty",
                 "projection": "rigid"

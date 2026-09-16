@@ -10,7 +10,7 @@
                 "locations": {
                     "1.21-1.21.1": "mes:1_21_0/mobs/deckhand",
                     "1.21.2-1.21.4": "mes:1_21_2/mobs/deckhand",
-                    "1.21.5-26.2": "mes:1_21_5/mobs/deckhand"
+                    "1.21.5-26.3": "mes:1_21_5/mobs/deckhand"
                 },
                 "processors": "minecraft:empty",
                 "projection": "rigid"
@@ -24,7 +24,7 @@
                 "locations": {
                     "1.21-1.21.1": "mes:1_21_0/mobs/corsair",
                     "1.21.2-1.21.4": "mes:1_21_2/mobs/corsair",
-                    "1.21.5-26.2": "mes:1_21_5/mobs/corsair"
+                    "1.21.5-26.3": "mes:1_21_5/mobs/corsair"
                 },
                 "processors": "minecraft:empty",
                 "projection": "rigid"

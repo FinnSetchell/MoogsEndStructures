@@ -8,7 +8,7 @@
                 "element_type": "moogs_structures:versioned_single_pool_element",
                 "location": "mes:1_21_0/astral_hideaway",
                 "locations": {
-                    "1.21-26.2": "mes:1_21_0/astral_hideaway"
+                    "1.21-26.3": "mes:1_21_0/astral_hideaway"
                 },
                 "processors": "minecraft:empty",
                 "projection": "rigid"

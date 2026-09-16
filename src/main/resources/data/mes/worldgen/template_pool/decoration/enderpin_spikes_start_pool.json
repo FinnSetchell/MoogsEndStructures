@@ -7,7 +7,7 @@
                 "element_type": "moogs_structures:versioned_single_pool_element",
                 "location": "mes:1_21_0/decoration/enderpin_spikes/enderpin_spikes_1",
                 "locations": {
-                    "1.21-26.2": "mes:1_21_0/decoration/enderpin_spikes/enderpin_spikes_1"
+                    "1.21-26.3": "mes:1_21_0/decoration/enderpin_spikes/enderpin_spikes_1"
                 },
                 "processors": "minecraft:empty",
                 "projection": "rigid"
@@ -19,7 +19,7 @@
                 "element_type": "moogs_structures:versioned_single_pool_element",
                 "location": "mes:1_21_0/decoration/enderpin_spikes/enderpin_spikes_2",
                 "locations": {
-                    "1.21-26.2": "mes:1_21_0/decoration/enderpin_spikes/enderpin_spikes_2"
+                    "1.21-26.3": "mes:1_21_0/decoration/enderpin_spikes/enderpin_spikes_2"
                 },
                 "processors": "minecraft:empty",
                 "projection": "rigid"

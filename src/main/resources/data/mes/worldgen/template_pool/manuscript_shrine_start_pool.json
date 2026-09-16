@@ -9,7 +9,7 @@
                 "location": "mes:1_21_9/manuscript_shrine",
                 "locations": {
                     "1.21-1.21.8": "mes:1_21_0/manuscript_shrine",
-                    "1.21.9-26.2": "mes:1_21_9/manuscript_shrine"
+                    "1.21.9-26.3": "mes:1_21_9/manuscript_shrine"
                 },
                 "processors": "minecraft:empty",
                 "projection": "rigid"
