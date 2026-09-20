@@ -2,7 +2,7 @@
 
 [![](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/D1D8LKA5N)
 
-[![Discord](https://img.shields.io/discord/869218732650688543?color=9033AF&label=DISCORD&style=for-the-badge)](https://discord.com/invite/S5nffJbuvA)
+[![Discord](https://img.shields.io/discord/869218732650688543?color=9033AF&label=DISCORD&style=for-the-badge)](https://moogsmods.com/discord?r=readme-mes)
 
 [![](https://img.shields.io/badge/My-projects-9033AF?style=for-the-badge&logo=curseforge)](https://www.curseforge.com/members/finndog_123/projects)
 
@@ -28,9 +28,9 @@ See our main structure mod [here](https://www.curseforge.com/minecraft/mc-mods/m
 
 ![](https://www.bisecthosting.com/images/CF/MES/BH_ME_BANNER3.webp)
 
-**The best and fastest way to get replies is to join our [discord server](https://discord.gg/S5nffJbuvA)**
+**The best and fastest way to get replies is to join our [discord server](https://moogsmods.com/discord?r=readme-mes)**
 
-[**![discord](https://i.imgur.com/sfAmR3Y.png)**](https://discord.gg/S5nffJbuvA)
+[**![discord](https://i.imgur.com/sfAmR3Y.png)**](https://moogsmods.com/discord?r=readme-mes)
 
   
 [![BHsponser](https://www.bisecthosting.com/images/CF/MES/BH_ME_PROMO.webp)](https://bisecthosting.com/moogsmods)
