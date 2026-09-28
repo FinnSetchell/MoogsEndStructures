@@ -32,3 +32,6 @@ NAMESPACE_GUIDE.md
 
 # Python bytecode from the helper scripts in scripts/
 __pycache__/
+
+# Local BoP source exports, nbtv output, and validation staging
+/bop_compat_datapack/_exports-2026-09-27/
