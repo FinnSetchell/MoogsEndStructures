@@ -157,7 +157,8 @@
                 "type": "minecraft:uniform",
                 "min": 20,
                 "max": 39
-              }
+              },
+              "treasure": true
             }
           ]
         },
@@ -172,7 +173,8 @@
                 "type": "minecraft:uniform",
                 "min": 20,
                 "max": 39
-              }
+              },
+              "treasure": true
             }
           ]
         },
@@ -187,7 +189,8 @@
                 "type": "minecraft:uniform",
                 "min": 20,
                 "max": 39
-              }
+              },
+              "treasure": true
             }
           ]
         },
@@ -202,7 +205,8 @@
                 "type": "minecraft:uniform",
                 "min": 25,
                 "max": 45
-              }
+              },
+              "treasure": true
             }
           ]
         },
@@ -217,7 +221,8 @@
                 "type": "minecraft:uniform",
                 "min": 25,
                 "max": 45
-              }
+              },
+              "treasure": true
             }
           ]
         },
@@ -232,7 +237,8 @@
                 "type": "minecraft:uniform",
                 "min": 25,
                 "max": 45
-              }
+              },
+              "treasure": true
             }
           ]
         }
