@@ -4,6 +4,9 @@
 
 ## [2.1.2]
 
+### Changed
+- Now requires Moog's Structure Lib 1.1.0 or newer
+
 ### Fixed
 - Enchanted loot in some chests can now roll treasure enchantments such as Mending, as it does on newer versions
 
