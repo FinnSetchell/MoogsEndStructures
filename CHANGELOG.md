@@ -5,7 +5,7 @@
 ## [2.1.2]
 
 ### Changed
-- Now requires Moog's Structure Lib 1.1.0 or newer
+- Now needs Moog's Structure Lib 3.0.0 or newer
 
 ### Fixed
 - Chests on Minecraft 26.3 now give full stacks and enchanted items, the same as on older versions
