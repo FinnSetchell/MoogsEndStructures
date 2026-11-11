@@ -83,10 +83,13 @@ tasks.register('buildDatapack', Zip) {
     archiveFileName.set(datapackArchiveName)
     destinationDirectory.set(layout.buildDirectory.dir('datapack'))
 
-    // pack.mcmeta (already has ${mod_name} expanded by processResources) + the full data folder.
+    // pack.mcmeta (already has ${mod_name} expanded by processResources) + the full data folder,
+    // plus the overlay folders pack.mcmeta lists: without them the pack's own tables would win over the
+    // mod's overlays on the older versions those overlays are for.
     from(resourcesDir) {
         include 'pack.mcmeta'
         include 'data/**'
+        include 'ov_*/**'
     }
     // The mod's icon becomes the datapack's pack.png at the zip root.
     from(resourcesDir) {

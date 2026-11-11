@@ -202,7 +202,7 @@
           "name": "mes:loot/diamond_spear",
           "items": "#mes:loot/diamond_spear",
           "weight": 3,
-          "expand": true
+          "expand": false
         },
         {
           "type": "minecraft:item",
