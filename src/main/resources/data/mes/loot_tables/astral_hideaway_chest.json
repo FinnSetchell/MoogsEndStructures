@@ -1,0 +1,34 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:map",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "minecraft:exploration_map",
+              "destination": "mes:on_starlight_voyager_maps",
+              "decoration": "blue_marker",
+              "zoom": 2,
+              "search_radius": 7,
+              "skip_existing_chunks": false
+            },
+            {
+              "function": "minecraft:set_name",
+              "name": {
+                "translate": "filled_map.mes.starlight_voyager_map",
+                "fallback": "Starlight Voyager Map"
+              },
+              "target": "item_name"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "random_sequence": "mes:chests/astral_hideaway_chest"
+}

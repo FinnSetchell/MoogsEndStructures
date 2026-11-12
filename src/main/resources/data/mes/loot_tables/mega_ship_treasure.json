@@ -353,6 +353,61 @@
           "weight": 150
         }
       ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:map",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "minecraft:exploration_map",
+              "destination": "mes:on_enderkeep_courtyard_maps",
+              "decoration": "mansion",
+              "zoom": 2,
+              "search_radius": 5,
+              "skip_existing_chunks": false
+            },
+            {
+              "function": "minecraft:set_name",
+              "name": {
+                "translate": "filled_map.mes.enderkeep_courtyard_map",
+                "fallback": "Enderkeep Courtyard Map"
+              },
+              "target": "item_name"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:map",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "minecraft:exploration_map",
+              "destination": "mes:on_phantom_citadel_maps",
+              "decoration": "mansion",
+              "zoom": 2,
+              "search_radius": 7,
+              "skip_existing_chunks": false
+            },
+            {
+              "function": "minecraft:set_name",
+              "name": {
+                "translate": "filled_map.mes.phantom_citadel_map",
+                "fallback": "Phantom Citadel Map"
+              },
+              "target": "item_name"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:empty",
+          "weight": 10
+        }
+      ]
     }
   ],
   "random_sequence": "minecraft:chests/mega_ship_treasure"

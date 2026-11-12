@@ -5,5 +5,11 @@
   "mes.releases": "GitHub Releases",
   "mes.kofi": "Ko-fi",
   "mes.curseforge": "CurseForge",
-  "mes.modrinth": "Modrinth"
+  "mes.modrinth": "Modrinth",
+  "filled_map.mes.enderkeep_courtyard_map": "Enderkeep Courtyard Map",
+  "filled_map.mes.phantom_citadel_map": "Phantom Citadel Map",
+  "filled_map.mes.mega_ship_map": "Mega Ship Map",
+  "filled_map.mes.enderskog_map": "Enderskog Map",
+  "filled_map.mes.starlight_voyager_map": "Starlight Voyager Map",
+  "filled_map.mes.mythic_garden_map": "Mythic Garden Map"
 }
