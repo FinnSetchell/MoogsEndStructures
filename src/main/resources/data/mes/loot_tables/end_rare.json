@@ -360,7 +360,7 @@
               "destination": "mes:on_enderskog_maps",
               "decoration": "red_x",
               "zoom": 2,
-              "search_radius": 4,
+              "search_radius": 9,
               "skip_existing_chunks": false
             },
             {

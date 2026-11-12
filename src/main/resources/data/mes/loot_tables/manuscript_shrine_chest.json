@@ -14,7 +14,7 @@
               "destination": "mes:on_mythic_garden_maps",
               "decoration": "red_x",
               "zoom": 2,
-              "search_radius": 6,
+              "search_radius": 10,
               "skip_existing_chunks": false
             },
             {

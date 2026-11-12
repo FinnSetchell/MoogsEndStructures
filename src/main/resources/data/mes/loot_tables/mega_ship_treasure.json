@@ -367,7 +367,7 @@
               "destination": "mes:on_enderkeep_courtyard_maps",
               "decoration": "mansion",
               "zoom": 2,
-              "search_radius": 5,
+              "search_radius": 9,
               "skip_existing_chunks": false
             },
             {
