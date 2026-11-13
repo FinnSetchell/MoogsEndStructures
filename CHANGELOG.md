@@ -4,8 +4,14 @@
 
 ## [2.1.2]
 
+### Added
+- End chests can hold maps that lead to the Enderkeep Courtyard, the Phantom Citadel, the Mega Ship, the Enderskog, the Starlight Voyager and the Mythic Garden
+  - The Astral Hideaway's and the Manuscript Shrine's chests are no longer empty: each holds a map
+
 ### Changed
 - Now requires Moog's Structure Lib 1.1.0 or newer
+- Chests in the End structures now hold End loot (ender pearls, chorus fruit, shulker shells and more) instead of End city treasure, with the best of it in the hardest places to reach
+- End chests can now hold a spire armor trim or dragon's breath
 
 ### Fixed
 - Enchanted loot in some chests can now roll treasure enchantments such as Mending, as it does on newer versions
