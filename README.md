@@ -1,83 +1,48 @@
-# Moogs End Structures
-## Coming soon!
+![banner](https://i.moogsmods.com/images/e99c329fb772483eb37097bfdf64e529.webp)
 
----
----
+[![Ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/D1D8LKA5N)
 
+[![Discord](https://img.shields.io/discord/869218732650688543?color=9033af&label=DISCORD&style=for-the-badge)](https://moogsmods.com/discord?r=readme-mes) [![CurseForge projects](https://img.shields.io/badge/CurseForge-projects-9033af?style=for-the-badge&logo=curseforge)](https://www.curseforge.com/members/finndog_123/projects) [![Modrinth projects](https://img.shields.io/badge/Modrinth-projects-9033af?style=for-the-badge&logo=modrinth)](https://modrinth.com/user/FinnDog_123) [![View Structures](https://i.moogsmods.com/images/c110cc09347a4f9f9de6c974f2fa35d8.png)](https://previews.moogsmods.com/end-structures/1.21.1/)
 
+![Overview](https://i.moogsmods.com/images/29b87d6dd2e34e61b6440f3291cae56d.webp)
 
-![banner](https://www.bisecthosting.com/images/CF/MES/BH_NU_HEADER.png)
+This Mod works for Forge, Fabric, NeoForge, and Quilt! It can also be installed server-side only.
+Forge support was dropped after 1.20.4
 
----
+### ABOUT
+Moog's End Structures breathes new life into the End dimension by introducing a range of new structures that blend perfectly with the existing landscape. Each structure is crafted with care using vanilla blocks and entities to keep that classic Minecraft feel. As you explore the End, you'll come across unique challenges, tough enemies, and valuable loot. This mod works with any modpack and can be installed alongside Moog's Voyager Structures (MVS) for an even richer gameplay experience. Dive into the End with Moog's End Structures and discover the hidden treasures that await!
 
-[![Discord](https://img.shields.io/discord/869218732650688543?color=9033af&label=DISCORD&style=for-the-badge)](https://moogsmods.com/discord?r=readme-mes) [![](https://img.shields.io/badge/TOTAL-80%20STRUCTURES-9033AF?style=for-the-badge)](https://github.com/FinnSetchell/MoogsVanillaStructuresV2/wiki) [![GitHub Sponsors](https://img.shields.io/github/sponsors/finnsetchell?color=9033af&style=for-the-badge)](https://github.com/sponsors/FinnSetchell) [![Twitter Follow](https://img.shields.io/twitter/follow/MoogsMods?color=9033af&style=for-the-badge)](https://twitter.com/MoogsMods)
+[![Browse every structure live in 3D](https://i.moogsmods.com/images/f8fe835413394a76b10a678afefea30f.png)](https://previews.moogsmods.com/end-structures/1.21.1/)
 
-[![](https://img.shields.io/badge/My-projects-9033af?style=for-the-badge&logo=curseforge)](https://www.curseforge.com/members/finndog_123/projects)
+See our main structure mod, MVS, [here](https://www.curseforge.com/minecraft/mc-mods/moogs-voyager-structures).
 
----
+### Biomes O Plenty Compatibility Datapack
 
-![Overview](https://www.bisecthosting.com/images/CF/MES/BH_NU_BANNER1.png)
+I've built a specific compatibility datapack for Moog's End Structures to enhance its integration with the popular mod, **Biomes O Plenty**. This datapack switches out the style of some of our existing structures to use blocks from BOP, creating a more cohesive and immersive experience when both mods are installed. You can find and download the compatibility datapack [here](https://www.curseforge.com/minecraft/coming-soon).
 
----
+### Config pack
+Every aspect of the mod is customizable using datapacks. A template with full instructions can be found [here](https://modrinth.com/datapack/mes-moogs-end-structures-(config-pack))
 
-**FEEDBACK**
+![features](https://i.moogsmods.com/images/6a8b185439cc4f5db518ba3846acfb56.webp)
+![collage](https://imgur.com/YPIvnN1.png)
 
-Please comment any ideas you may have to improve this mod. Any and all feedback is greatly appreciated :)
+![showcase](https://i.moogsmods.com/images/6a8b185439cc4f5db518ba3846acfb56.webp)
 
-**FORGE AND FABRIC**
+### VIDEOS
 
-Look for files marked with **\[FORGE\]** or **\[FABRIC\]**.   
-***Fabric** mods are marked with **BETA** so that they show up on the side, but they are actually **RELEASE's***
+[![Watch on YouTube](https://img.youtube.com/vi/gqCYji1o2Xs/mqdefault.jpg)](https://www.youtube.com/watch?v=gqCYji1o2Xs&t=102s)
+[![Watch on YouTube](https://img.youtube.com/vi/1XGKnGel1oI/mqdefault.jpg)](https://www.youtube.com/watch?v=1XGKnGel1oI&t=239s)
 
-**ABOUT**
+[![Watch on YouTube](https://img.youtube.com/vi/khBGeEdrWuc/mqdefault.jpg)](https://www.youtube.com/watch?v=khBGeEdrWuc)
 
-Moogs Voyager Structures brings life, fun and variety to your Minecraft world! Explore awesome new structures made with vanilla blocks and entities, and discover loot, enemies, and villagers along the way. This mod is compatible with any modpack and keeps the vanilla feel of the game!
+[![MinecraftStorage](https://imgur.com/ApCtgr7.png)](https://minecraftstorage.com/mods/mes-moogs-end-structures)
 
-**Config pack**
+### MODPACKS
 
-[link](https://www.curseforge.com/minecraft/texture-packs/mes-moogs-voyager-structure-config-pack)
+See all modpacks [here](https://www.modpackindex.com/modpack/finder?included_mods=46028).
 
-A datapack you can use to configure the mod.
+![DISCORD](https://i.moogsmods.com/images/f740b8716d814736a070fd39135c7dc6.webp)
 
-**REQUIRED ON CLIENT AND SERVER**
+The best and fastest way to get replies is to join our [Discord server](https://moogsmods.com/discord?r=readme-mes).
 
-1. simply download the version you need
-2. then add it to your mods folder  
-   It does not require any settings to be changed for it and should work with all mods
-
----
-
-![features](https://www.bisecthosting.com/images/CF/MES/BH_NU_BANNER2.png)![collage](https://imgur.com/I9lNEvl.png)
-
----
-
-![showcase](https://www.bisecthosting.com/images/CF/MES/BH_NU_BANNER4.png)
-
----
-
-**If you have any modpacks/videos using this mod that you want featured here, then message me on discord!**
-
-**VIDEOS:**
-
-
-
-
-
-**MODPACKS**
-
-see all modpacks [here](https://www.modpackindex.com/modpack/finder?included_mods=37802 "here")
-
----
-
-![](https://www.bisecthosting.com/images/CF/MES/BH_NU_BANNER3.png)
-
----
-
-**The best and fastest way to get replies is to join our [discord server](https://moogsmods.com/discord?r=readme-mes)**
-
-[**![discord](https://i.imgur.com/sfAmR3Y.png)**](https://moogsmods.com/discord?r=readme-mes "discord invite")
-
----
-
-[![serverImage](https://i.imgur.com/kMtqORw.png)](https://moogsmodded.store.playerlands.com/ "serverShop")  
-[![BHsponser](https://www.bisecthosting.com/images/CF/MES/BH_NU_PROMO.png)](https://bisecthosting.com/moogsmods)
+[![BHsponser](https://i.moogsmods.com/images/4f63bd11dcd94f0b9fbfe1aa7de0cdba.webp)](https://bisecthosting.com/moogsmods?r=mres)
