@@ -9,6 +9,7 @@
   - The Astral Hideaway's and the Manuscript Shrine's chests are no longer empty: each holds a map
 
 ### Changed
+- Now requires Moog's Structure Lib 4.0.0 or newer
 - Now needs Moog's Structure Lib 3.0.0 or newer
 - Chests in the End structures now hold End loot (ender pearls, chorus fruit, shulker shells and more) instead of End city treasure, with the best of it in the hardest places to reach
 - End chests can now hold a spire armor trim or dragon's breath
