@@ -27,13 +27,13 @@ jobs:
       cancel-in-progress: false
     steps:
       - name: Checkout mod at tag
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           ref: ${{ github.ref }}
           fetch-depth: 0   # full history + branches for the plan's branch sanity check
 
       - name: Checkout release-actions
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           repository: FinnSetchell/release-actions
           ref: v2
