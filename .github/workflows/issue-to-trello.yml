@@ -17,7 +17,7 @@ jobs:
       cancel-in-progress: false
     steps:
       - name: Checkout release-actions
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           repository: FinnSetchell/release-actions
           ref: issue-to-trello-v1
