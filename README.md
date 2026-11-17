@@ -31,7 +31,7 @@ Look for files marked with **\[FORGE\]** or **\[FABRIC\]**.
 
 **ABOUT**
 
-Moogs Voyager Structures brings life, fun and variety to your Minecraft world! Explore awesome new structures made with vanilla blocks and entities, and discover loot, enemies, and villagers along the way. This mod is compatible with any modpack and keeps the vanilla feel of the game!
+Moogs End Structures brings life, fun and variety to your Minecraft world! Explore awesome new structures made with vanilla blocks and entities, and discover loot, enemies, and villagers along the way. This mod is compatible with any modpack and keeps the vanilla feel of the game!
 
 **Config pack**
 
@@ -61,7 +61,7 @@ A datapack you can use to configure the mod.
 
 ### STRUCTURES
 
-This mod adds 25 unique End-themed structures to Minecraft! Here's a comprehensive list of all included structures:
+This mod adds 29 unique End-themed structures to Minecraft! Here's a comprehensive list of all included structures:
 
 | Structure Name | Biome Tag | Generation Type | Rarity | Special Features |
 |---|---|---|---|---|
@@ -78,6 +78,7 @@ This mod adds 25 unique End-themed structures to Minecraft! Here's a comprehensi
 | Placid Prairie | End Biomes | Surface | Normal | Prairie-like floating structure |
 | Starlight Voyager | End Biomes | Surface | Normal | Voyager ship structure |
 | **Mega Ships** |
+| Bloody Mary | End Biomes | Surface | Ultra Rare | Pirate ship with a skeleton pirate crew (spacing 100) |
 | Mega Ship | End Biomes | Surface | Ultra Rare | Large ship (spacing 77), spawns shulkers & endermen |
 | Mega Ship Basic | End Biomes | Surface | Ultra Rare | Basic variant (spacing 80) |
 | Mega Ship Crashed | End Biomes | Surface | Ultra Rare | Crashed variant (spacing 75) |
@@ -86,6 +87,9 @@ This mod adds 25 unique End-themed structures to Minecraft! Here's a comprehensi
 | Mega Ship Deepslate | End Biomes | Surface | Ultra Rare | Deepslate variant (spacing 88) |
 | Mega Ship Deepslate 2 | End Biomes | Surface | Ultra Rare | Second deepslate variant (spacing 82) |
 | Mega Ship Deepslate 3 | End Biomes | Surface | Ultra Rare | Third deepslate variant (spacing 84) |
+| Royal Mega Ship | End Biomes | Surface | Ultra Rare | Pale oak royal ship with a royal crew, Minecraft 1.21.4+ (spacing 112) |
+| Royal Mega Ship 2 | End Biomes | Surface | Ultra Rare | Second pale oak royal ship, Minecraft 1.21.4+ (spacing 116) |
+| Royal Mega Ship Crashed | End Biomes | Surface | Ultra Rare | Crashed pale oak royal ship, Minecraft 1.21.4+ (spacing 96) |
 | **Decorations** |
 | Astral Meteorite | End Biomes | Surface | Normal | Meteorite decoration structure |
 | Endscraps | End Biomes | Surface | Normal | Scrap decoration structure |
