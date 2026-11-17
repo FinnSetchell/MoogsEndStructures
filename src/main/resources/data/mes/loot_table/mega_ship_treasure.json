@@ -685,5 +685,5 @@
       ]
     }
   ],
-  "random_sequence": "minecraft:chests/mega_ship_treasure"
+  "random_sequence": "mes:mega_ship_treasure"
 }

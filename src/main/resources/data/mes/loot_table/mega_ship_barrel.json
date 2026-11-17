@@ -256,5 +256,5 @@
       ]
     }
   ],
-  "random_sequence": "minecraft:chests/mega_ship_barrel"
+  "random_sequence": "mes:mega_ship_barrel"
 }
