@@ -11,7 +11,7 @@
                     "1.20-1.20.4": "mes:1_20_0/phantom_citadel",
                     "1.20.5-1.20.6": "mes:1_20_5/phantom_citadel"
                 },
-                "processors": "minecraft:empty",
+                "processors": "mes:phantom_citadel_spawners",
                 "projection": "rigid"
             }
         }
