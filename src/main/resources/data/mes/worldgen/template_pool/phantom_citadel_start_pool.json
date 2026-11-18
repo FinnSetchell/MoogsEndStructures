@@ -10,7 +10,7 @@
                 "locations": {
                     "1.21-26.3": "mes:1_21_0/phantom_citadel"
                 },
-                "processors": "minecraft:empty",
+                "processors": "mes:phantom_citadel_spawners",
                 "projection": "rigid"
             }
         }
