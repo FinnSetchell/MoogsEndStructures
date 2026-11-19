@@ -519,7 +519,7 @@
               "function": "minecraft:exploration_map",
               "destination": "mes:on_enderkeep_courtyard_maps",
               "decoration": "mansion",
-              "zoom": 2,
+              "zoom": 3,
               "search_radius": 5,
               "skip_existing_chunks": false
             },
@@ -541,7 +541,7 @@
               "type": "minecraft:exploration_map",
               "destination": "#mes:on_enderkeep_courtyard_maps",
               "decoration": "mansion",
-              "zoom": 2,
+              "zoom": 3,
               "search_radius": 5,
               "skip_existing_chunks": false
             },
@@ -575,7 +575,7 @@
               "function": "minecraft:exploration_map",
               "destination": "mes:on_phantom_citadel_maps",
               "decoration": "mansion",
-              "zoom": 2,
+              "zoom": 3,
               "search_radius": 7,
               "skip_existing_chunks": false
             },
@@ -597,7 +597,7 @@
               "type": "minecraft:exploration_map",
               "destination": "#mes:on_phantom_citadel_maps",
               "decoration": "mansion",
-              "zoom": 2,
+              "zoom": 3,
               "search_radius": 7,
               "skip_existing_chunks": false
             },
@@ -631,7 +631,7 @@
               "function": "minecraft:exploration_map",
               "destination": "mes:on_mystical_archway_maps",
               "decoration": "mansion",
-              "zoom": 2,
+              "zoom": 3,
               "search_radius": 5,
               "skip_existing_chunks": false
             },
@@ -653,7 +653,7 @@
               "type": "minecraft:exploration_map",
               "destination": "#mes:on_mystical_archway_maps",
               "decoration": "mansion",
-              "zoom": 2,
+              "zoom": 3,
               "search_radius": 5,
               "skip_existing_chunks": false
             },
