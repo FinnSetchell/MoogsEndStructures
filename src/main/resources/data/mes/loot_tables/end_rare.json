@@ -336,7 +336,7 @@
               "function": "minecraft:exploration_map",
               "destination": "mes:on_mega_ship_maps",
               "decoration": "red_x",
-              "zoom": 2,
+              "zoom": 3,
               "search_radius": 3,
               "skip_existing_chunks": false
             },
@@ -359,7 +359,7 @@
               "function": "minecraft:exploration_map",
               "destination": "mes:on_enderskog_maps",
               "decoration": "red_x",
-              "zoom": 2,
+              "zoom": 3,
               "search_radius": 9,
               "skip_existing_chunks": false
             },
