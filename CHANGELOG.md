@@ -14,6 +14,7 @@
 - Now requires Moog's Structure Lib 4.0.0 or newer
 - Chests in the End structures now hold End loot (ender pearls, chorus fruit, shulker shells and more) instead of End city treasure, with the best of it in the hardest places to reach
 - End chests can now hold a spire armor trim or dragon's breath
+- Maps to End structures now show a wider area, so your marker turns into an arrow much sooner
 
 ### Fixed
 - Enchanted loot in some chests can now roll treasure enchantments such as Mending, as it does on newer versions
